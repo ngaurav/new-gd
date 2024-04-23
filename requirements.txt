@@ -1,0 +1,8 @@
+loguru
+playwright
+rich
+python-dotenv
+openai
+Pillow
+requests
+aiohttp

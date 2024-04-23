@@ -1,0 +1,10 @@
+{
+    "input_folder" : "input_assets",
+    "midjourney_output_folder" : "midjourney/mid_journey_images",
+    "midjourney_output_file" : "midjourney/mid_journey_images.txt",
+    "step1_output_file" : "step1_output.json",
+    "step2_output_file" : "step2_output.json",
+    "step3_output_folder" : "step3_output",
+    "step3_output_file" : "step3_output.json",
+    "step4_output_folder" : "step4_output"
+}

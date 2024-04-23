@@ -1,0 +1,11 @@
+.env
+input_assets/
+output_images/
+midjourney/mid_journey_images
+fabric/fabric_images/
+fabric/text_images/
+ve
+__pycache__
+midjourney/__pycache__
+midjourney_automation.log
+node_modules/

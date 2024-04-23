@@ -1,0 +1,50 @@
+{
+    "assets": [
+        {
+            "x": 300,
+            "y": 180,
+            "width": 480,
+            "height": 360,
+            "asset_uri": "mucho_mambo_logo.png"
+        },
+        {
+            "x": 0,
+            "y": 540,
+            "width": 1248,
+            "height": 563,
+            "asset_uri": "buffalo_wild_wings_logo.png"
+        },
+        {
+            "x": 780,
+            "y": 997,
+            "width": 300,
+            "height": 83,
+            "asset_uri": "palladium_dance_company_logo.png"
+        }
+    ],
+    "images": [
+        {
+            "x": 0,
+            "y": 0,
+            "width": 1080,
+            "height": 1080,
+            "prompt": "Golden starry themed background"
+        },
+        {
+            "x": 0,
+            "y": 0,
+            "width": 1080,
+            "height": 1080,
+            "prompt": "A real photograph of a couple doing salsa"
+        }
+    ],
+    "texts": [
+        {
+            "x": 200,
+            "y": 420,
+            "font_size": 32,
+            "font_style": "Elegant, modern sans serif",
+            "content": "Thursday 9PM to 12 PM"
+        }
+    ]
+}
