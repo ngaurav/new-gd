@@ -124,6 +124,11 @@ async function createCanvas() {
         asset = step3_output.assets[i]
         await addAssetToCanvas(asset.asset_uri, asset.width, asset.height, asset.x, asset.y)
     }
+    const textElements = step3_output.texts.map(t => {
+        return createDynamicText(t.content, t.x, t.y, "bree serif", 'regular', "#FFFFFF", t.font_size, 'normal');
+    })
+    const group = new fabric.Group(textElements, {});//check
+    canvas.add(group);
     canvas.renderAll();
 
     // Check if the directory exists
@@ -142,7 +147,7 @@ async function createCanvas() {
 };
 
 
-function createDynamicText(text, left, top, width, height, fontFamily, fontWeight, fill, fontSize, fontStyle = 'normal') {
+function createDynamicText(text, left, top, fontFamily, fontWeight, fill, fontSize, fontStyle = 'normal') {
     // TODO: 
     // Textbox or Text or IText
     // fontFamily = 'Jersey'
