@@ -3,7 +3,6 @@ const fabric = require('fabric').fabric;
 const path = require('path');
 
 var config = require('./config.json');
-const step1_output = JSON.parse(fs.readFileSync(config.STEP1_OUTPUT_FILE));
 const step3_output = JSON.parse(fs.readFileSync(config.STEP3_OUTPUT_FILE));
 const step4_response_folder = config.STEP4_OUTPUT_FOLDER;
 
@@ -69,58 +68,77 @@ fabric.nodeCanvas.registerFont('ttf_files/Condiment-Regular.ttf', {
 });
 
 const canvas = new fabric.Canvas('canvas', {
-    width: step1_output['width'],
-    height: step1_output['height']
+    width: step3_output.background.width,
+    height: step3_output.background.height
 });
+
+async function addImageToCanvas(url, width, height, x, y) {
+    await new Promise((resolve, reject) => {
+        fabric.Image.fromURL(url, function(img) { 
+            img.scaleToWidth(width)
+            img.scaleToHeight(height)
+            img.left = x
+            img.top = y
+            resolve(img)    
+        }, function (err) {
+            console.log('Error loading image.');
+            console.log(err);
+            reject(err);
+        });
+        
+    }).then ((result) => {
+        canvas.add(result);
+    });
+}
+
+async function addAssetToCanvas(asset_uri, width, height, x, y) {
+    const src ='file://'+__dirname+'/'+config.INPUT_FOLDER+'/'+asset_uri
+    await new Promise((resolve, reject) => {
+        fabric.util.loadImage(src, function(asset) { 
+            var img = new fabric.Image(asset)
+            img.scaleToWidth(width)
+            img.scaleToHeight(height)
+            img.left = x
+            img.top = y
+            resolve(img);
+        }, function (err) {
+            console.log('Error loading image.');
+            console.log(err);
+            reject(err);
+        });
+    }).then ((result) => {
+        canvas.add(result);
+    });
+}
 
 // Function to create canvas and render elements
 async function createCanvas() {
     // Read all URLs from the text file
     
-    const urls = step3_output.background.urls;
-
-    for (let i = 0; i < urls.length; i++) {
-        // const url = 'file://'+__dirname+'/'+urls[i]
-        const url = urls[i]
-        console.log(url)
-        await new Promise((resolve, reject) => {
-            // fabric.util.loadImage(url, function (img) {
-            fabric.Image.fromURL(url, function(img) { 
-                img.scaleToWidth(step1_output['width'])
-                img.scaleToHeight(step1_output['height'])
-
-                // const group = new fabric.Group([img], {});
-                canvas.add(img);
-
-                canvas.renderAll();
-
-                // Save JSON
-                // const json = JSON.stringify(canvas);
-                // console.log(json);
-
-                // Check if the directory exists
-                if (!fs.existsSync(step4_response_folder)) {
-                    // If it doesn't exist, create it
-                    fs.mkdirSync(step4_response_folder, { recursive: true });
-                }
-                
-                // Save PNG
-                const out = fs.createWriteStream(step4_response_folder + `/output${i + 1}.png`);
-                const stream = canvas.createPNGStream();
-                stream.pipe(out);
-                out.on('finish', () => {
-                    console.log(`PNG saved successfully as output${i + 1}.png.`);
-                    resolve();
-                });
-            }, function (err) {
-                console.log('Error loading image.');
-                console.log(err);
-                reject(err);
-            });
-            // Set the size of the canvas
-            canvas.setDimensions({ width: 1024, height: 1024 });
-        });
+    await addImageToCanvas(step3_output.background.urls[0], step3_output.background.width, step3_output.background.height, step3_output.background.x, step3_output.background.y)
+    for (let i = 0; i < step3_output.images.length; i++) {
+        image = step3_output.images[i]
+        await addImageToCanvas(image.urls[0], image.width, image.height, image.x, image.y)
     }
+    for (let i = 0; i < step3_output.assets.length; i++) {
+        asset = step3_output.assets[i]
+        await addAssetToCanvas(asset.asset_uri, asset.width, asset.height, asset.x, asset.y)
+    }
+    canvas.renderAll();
+
+    // Check if the directory exists
+    if (!fs.existsSync(step4_response_folder)) {
+        // If it doesn't exist, create it
+        fs.mkdirSync(step4_response_folder, { recursive: true });
+    }
+    
+    // Save PNG
+    const out = fs.createWriteStream(step4_response_folder + `/output.png`);
+    const stream = canvas.createPNGStream();
+    stream.pipe(out);
+    out.on('finish', () => {
+        console.log(`PNG saved successfully as output.png.`);
+    });
 };
 
 
