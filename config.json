@@ -1,10 +1,10 @@
 {
-    "input_folder" : "input_assets",
-    "midjourney_output_folder" : "midjourney/mid_journey_images",
-    "midjourney_output_file" : "midjourney/mid_journey_images.txt",
-    "step1_output_file" : "step1_output.json",
-    "step2_output_file" : "step2_output.json",
-    "step3_output_folder" : "step3_output",
-    "step3_output_file" : "step3_output.json",
-    "step4_output_folder" : "step4_output"
+    "INPUT_FOLDER" : "input_assets",
+    "MIDJOURNEY_OUTPUT_FOLDER" : "midjourney/mid_journey_images",
+    "MIDJOURNEY_OUTPUT_FILE" : "midjourney/mid_journey_images.txt",
+    "STEP1_OUTPUT_FILE" : "step1_output.json",
+    "STEP2_OUTPUT_FILE" : "step2_output.json",
+    "STEP3_OUTPUT_FOLDER" : "step3_output",
+    "STEP3_OUTPUT_FILE" : "step3_output.json",
+    "STEP4_OUTPUT_FOLDER" : "step4_output"
 }

@@ -28,6 +28,7 @@ The only difference is that Image is represented by a textual description wherea
 The user will specify the requirements in a json format. It will have the following information:
 - the canvas size: width and height of the poster
 - the theme for the poster: the general vibe of the poster
+- a description of the background of the poster.
 - the color scheme of the poster.
 - the font theme: general guidance on what kinds of fonts to be used in the poster.
 - A list of elements: these represent individual components of the poster. They can have their own style guidelines.

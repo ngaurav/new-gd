@@ -3,9 +3,9 @@ const fabric = require('fabric').fabric;
 const path = require('path');
 
 var config = require('./config.json');
-const step1_output = JSON.parse(fs.readFileSync(config.step1_output_file));
-const step3_output = JSON.parse(fs.readFileSync(config.step3_output_file));
-const step4_response_folder = config.step4_output_folder;
+const step1_output = JSON.parse(fs.readFileSync(config.STEP1_OUTPUT_FILE));
+const step3_output = JSON.parse(fs.readFileSync(config.STEP3_OUTPUT_FILE));
+const step4_response_folder = config.STEP4_OUTPUT_FOLDER;
 
 fabric.nodeCanvas.registerFont('ttf_files/BreeSerif-Regular.ttf', {
     family: 'bree serif'
@@ -77,7 +77,7 @@ const canvas = new fabric.Canvas('canvas', {
 async function createCanvas() {
     // Read all URLs from the text file
     
-    const urls = step3_output.images[1].urls;
+    const urls = step3_output.background.urls;
 
     for (let i = 0; i < urls.length; i++) {
         // const url = 'file://'+__dirname+'/'+urls[i]

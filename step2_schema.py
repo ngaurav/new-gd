@@ -23,6 +23,7 @@ class TextBox(BaseModel):
     content: str
 
 class Poster(BaseModel):
+    background: Image
     assets: List[Asset]
     images: List[Image]
     texts: List[TextBox]

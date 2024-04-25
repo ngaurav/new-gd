@@ -10,7 +10,7 @@ def step1_post_process(outline: str):
     out = getjson(outline)
     for el in out['elements']:
         if 'asset' in el.keys() and el['asset']:
-            img = Image.open(config['input_folder']+'/'+el['asset'])
+            img = Image.open(config['INPUT_FOLDER']+'/'+el['asset'])
             el['type'] = "asset"
             el['height'] = img.height
             el['width'] = img.width
@@ -22,5 +22,5 @@ def step1_post_process(outline: str):
 if __name__ == "__main__":
     llm_output = askgpt(step1_user_prompt_1, system=step1_system_prompt)
     step1_response_1 = step1_post_process(llm_output)
-    with open(config['step1_output_file'], 'w') as f:
+    with open(config['STEP1_OUTPUT_FILE'], 'w') as f:
         json.dump(step1_response_1, f, indent=4)
