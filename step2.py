@@ -1,5 +1,5 @@
 import shutil
-from utils import askgptvision, getjson
+from utils import askgpt, getjson
 from step2_prompts import step2_system_prompt
 import json, os
 import subprocess
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     i = 0
     for url in step1_response['urls']:
         system_prompt = step2_system_prompt.replace(r"<width>", str(step1_response['width'])).replace(r"<height>", str(step1_response['height']))
-        llm_output = askgptvision(json.dumps(step1_response['elements']), url, system=system_prompt)
+        llm_output = askgpt(json.dumps(step1_response['elements']), system=system_prompt)
         step2_response = getjson(llm_output)
         step2_response['poster_image'] = {
             'x': 0,

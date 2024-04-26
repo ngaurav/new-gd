@@ -3,46 +3,46 @@
         {
             "x": 150,
             "y": 50,
-            "width": 400,
-            "height": 300,
+            "width": 780,
+            "height": 586,
             "asset_uri": "mucho_mambo_logo.png"
         },
         {
-            "x": 450,
-            "y": 800,
-            "width": 500,
-            "height": 225,
+            "x": 190,
+            "y": 780,
+            "width": 488,
+            "height": 220,
             "asset_uri": "buffalo_wild_wings_logo.png"
         },
         {
-            "x": 800,
-            "y": 200,
-            "width": 200,
-            "height": 55,
+            "x": 120,
+            "y": 910,
+            "width": 840,
+            "height": 140,
             "asset_uri": "palladium_dance_company_logo.png"
         }
     ],
     "texts": [
         {
             "x": 200,
-            "y": 400,
-            "font_size": 32,
+            "y": 650,
+            "font_size": 64,
             "font_family": "allura",
-            "content": "Salsa Social Night"
+            "content": "A Salsa Social Night"
         },
         {
             "x": 200,
-            "y": 450,
-            "font_size": 24,
-            "font_family": "garamond",
-            "content": "Thursday, 9PM - 12 PM"
+            "y": 720,
+            "font_size": 48,
+            "font_family": "merriweather",
+            "content": "Thursday, 9 PM to 12 AM"
         },
         {
-            "x": 500,
-            "y": 500,
-            "font_size": 20,
-            "font_family": "shrikhand",
-            "content": "Organised by Palladium Dance Company"
+            "x": 280,
+            "y": 850,
+            "font_size": 48,
+            "font_family": "oswald",
+            "content": "Buffalo Wild Wings, Indiranagar"
         }
     ],
     "poster_image": {

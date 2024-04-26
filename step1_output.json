@@ -1,46 +1,51 @@
 {
     "width": 1080,
     "height": 1080,
-    "theme": "Salsa Social Night",
-    "background": "Golden starry theme",
-    "foreground": "Real photograph of a couple doing salsa",
-    "prompt": "Golden starry theme background with a foreground of a real photograph of a couple doing salsa",
-    "color_scheme": "Golden and vibrant tones",
-    "font_theme": "Elegant and festive",
+    "theme": "Salsa Social Event",
+    "background": "Golden stars scattered all over, giving a glitzy festive look against a deep night sky",
+    "foreground": "A real photograph of a couple performing a salsa move, capturing the dynamic and vibrant spirit",
+    "prompt": "Golden stars scattered all over, giving a glitzy festive look against a deep night sky with a real photograph of a couple performing a salsa move, capturing the dynamic and vibrant spirit",
+    "color_scheme": "Golden hues with shades of red and black",
+    "font_theme": "Dynamic, flamboyant fonts for the event title and details, elegant and readable for other text",
     "elements": [
         {
             "name": "title",
             "description": "Mucho Mambo",
+            "placement": "top",
+            "style": "Large, flamboyant script font in golden color",
             "asset": "mucho_mambo_logo.png",
-            "style": "Bold and prominent placement",
             "type": "asset",
             "aspect_ratio": "1.33"
         },
         {
             "name": "subtitle",
-            "description": "Salsa Social Night",
-            "style": "Elegant and visible",
+            "description": "A Salsa Social Night",
+            "placement": "top after title",
+            "style": "Elegant script font, smaller than the title, in white color",
             "type": "text"
         },
         {
-            "name": "date",
-            "description": "Thursday, 9PM - 12 PM",
-            "style": "Classic and clear font",
+            "name": "date and time",
+            "description": "Thursday, 9 PM to 12 AM",
+            "placement": "middle",
+            "style": "Readable modern font in white color",
             "type": "text"
         },
         {
             "name": "venue",
             "description": "Buffalo Wild Wings, Indiranagar",
+            "placement": "middle after date and time",
+            "style": "Bold modern font in white",
             "asset": "buffalo_wild_wings_logo.png",
-            "style": "Casual and inviting style",
             "type": "asset",
             "aspect_ratio": "2.22"
         },
         {
             "name": "organizer",
-            "description": "Organised by Palladium Dance Company",
+            "description": "Organized by Palladium Dance Company",
+            "placement": "bottom",
+            "style": "Flowing script font in golden color",
             "asset": "palladium_dance_company_logo.png",
-            "style": "Professional and trustworthy appearance",
             "type": "asset",
             "aspect_ratio": "3.61"
         }
