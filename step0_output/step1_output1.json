@@ -1,0 +1,53 @@
+{
+    "width": 1080,
+    "height": 1080,
+    "theme": "Salsa Social Event",
+    "background": "Golden starry theme",
+    "foreground": "Real photograph of a couple doing salsa",
+    "prompt": "Golden starry themed background with a real photograph of a couple doing salsa in the foreground",
+    "color_scheme": "Gold, Black, and Red",
+    "font_theme": "Elegant Script for titles, Sans Serif for details",
+    "elements": [
+        {
+            "name": "title",
+            "description": "Mucho Mambo",
+            "asset": "mucho_mambo_logo.png",
+            "placement": "slightly above center",
+            "important": true,
+            "style": "Main title in an Elegant Script font, enlarged to draw attention",
+            "type": "asset",
+            "aspect_ratio": "1.33"
+        },
+        {
+            "name": "date and time",
+            "description": "Thursday 9PM to 12AM",
+            "placement": "slightly below center",
+            "important": false,
+            "type": "text"
+        },
+        {
+            "name": "venue",
+            "description": "At Buffalo Wild Wings, Indiranagar",
+            "asset": "buffalo_wild_wings_logo.png",
+            "placement": "bottom right",
+            "important": false,
+            "type": "asset",
+            "aspect_ratio": "2.22"
+        },
+        {
+            "name": "organizer",
+            "description": "Organized by Palladium Dance Company",
+            "asset": "palladium_dance_company_logo.png",
+            "placement": "bottom left",
+            "important": false,
+            "type": "asset",
+            "aspect_ratio": "3.61"
+        }
+    ],
+    "urls": [
+        "https://cdn.discordapp.com/attachments/1224586563510468619/1233344295852048446/gd_superagi_98661_Create_a_poster_Golden_starry_theme_backgroun_231ee637-294b-4df1-8379-cf854125208a.png?ex=662cc0e2&is=662b6f62&hm=041109bf390b224d8c8633d83e555f4a0c1e82202ff45fc7b123c045b669d3b0&",
+        "https://cdn.discordapp.com/attachments/1224586563510468619/1233344308917309520/gd_superagi_98661_Create_a_poster_Golden_starry_theme_backgroun_edc0dd12-f6d0-46e1-a874-2c172b288444.png?ex=662cc0e5&is=662b6f65&hm=18b50c10666768098757dee1d5368eb53b18c7bdbf6185bb4fdcf2b16c39894e&",
+        "https://cdn.discordapp.com/attachments/1224586563510468619/1233344322485751878/gd_superagi_98661_Create_a_poster_Golden_starry_theme_backgroun_eda48be6-d73e-4e09-bd9a-72fc1c446fa7.png?ex=662cc0e8&is=662b6f68&hm=7078b5be642cbfab0fbb579edd5f80391af9562596220c110496bf442a668e23&",
+        "https://cdn.discordapp.com/attachments/1224586563510468619/1233344338281500695/gd_superagi_98661_Create_a_poster_Golden_starry_theme_backgroun_f86f91d1-7fb5-46c5-aaf9-ef2a84750282.png?ex=662cc0ec&is=662b6f6c&hm=2aeffe5a5f5af0d10a407c2fe7ebee749342a7e16768557b5ef45f5d1221a17c&"
+    ]
+}
