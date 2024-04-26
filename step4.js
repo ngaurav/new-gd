@@ -113,22 +113,25 @@ async function addAssetToCanvas(asset_uri, width, height, x, y) {
 
 // Function to create canvas and render elements
 async function createCanvas() {
-    // Read all URLs from the text file
-    
+    // Add Background to Canvas
     await addImageToCanvas(step3_output.background.urls[0], step3_output.background.width, step3_output.background.height, step3_output.background.x, step3_output.background.y)
+    // Add all the foreground images to Canvas
     for (let i = 0; i < step3_output.images.length; i++) {
         image = step3_output.images[i]
         await addImageToCanvas(image.urls[0], image.width, image.height, image.x, image.y)
     }
+    // Add all the assets to Canvas
     for (let i = 0; i < step3_output.assets.length; i++) {
         asset = step3_output.assets[i]
         await addAssetToCanvas(asset.asset_uri, asset.width, asset.height, asset.x, asset.y)
     }
+    // Add all the texts to Canvas
     const textElements = step3_output.texts.map(t => {
         return createDynamicText(t.content, t.x, t.y, "bree serif", 'regular', "#FFFFFF", t.font_size, 'normal');
     })
     const group = new fabric.Group(textElements, {});//check
     canvas.add(group);
+    // Render everything
     canvas.renderAll();
 
     // Check if the directory exists
