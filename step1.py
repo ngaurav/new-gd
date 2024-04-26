@@ -16,7 +16,7 @@ def step1_post_process(outline: str):
             el['width'] = img.width
             el['aspect_ratio'] = str(round(img.width/img.height, 2))
         else:
-            el['type'] = askgpt(json.dumps(el), system=classifier_prompt, model='gpt-4-turbo')
+            el['type'] = 'text'
     return out
 
 if __name__ == "__main__":

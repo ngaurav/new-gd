@@ -1,81 +1,59 @@
 {
-    "background": {
+    "poster_image": {
         "x": 0,
         "y": 0,
         "width": 1080,
         "height": 1080,
-        "prompt": "Golden starry theme with colors gold, red, and black, reflecting a festive Salsa Social Event ambiance",
+        "prompt": "Create a golden starry background with a central focus on a photograph of a salsa dancing couple, blending seamlessly into the gold, red, and black color scheme",
         "urls": [
-            "https://cdn.discordapp.com/attachments/1224586563510468619/1232955987049054229/gd_superagi_98661_Create_a_poster_background_Golden_starry_them_96b276d0-3e52-4ed0-b0e0-157f4b3c4a9b.png?ex=662b573e&is=662a05be&hm=7ef7ad5aeef1a34927fe27a7bb43f42139b07f99d821b4a6d991ea2147772059&",
-            "https://cdn.discordapp.com/attachments/1224586563510468619/1232956008117047327/gd_superagi_98661_Create_a_poster_background_Golden_starry_them_d5cf49b2-3715-41cb-a8f7-5602d3ba9840.png?ex=662b5743&is=662a05c3&hm=da1fb4a652360ec6061d161713b746ef6d8cb421aaad11862731eba1662bfa14&",
-            "https://cdn.discordapp.com/attachments/1224586563510468619/1232956020960006215/gd_superagi_98661_Create_a_poster_background_Golden_starry_them_febc93cd-dc78-4c10-abaa-b7f668f2a392.png?ex=662b5746&is=662a05c6&hm=b41e6220326b9c50a184b1621912e578ce71cb47825f37923e6a6b9440430255&",
-            "https://cdn.discordapp.com/attachments/1224586563510468619/1232956036592308224/gd_superagi_98661_Create_a_poster_background_Golden_starry_them_984592f9-935a-45e2-bb0b-df2420af1c7f.png?ex=662b574a&is=662a05ca&hm=755b02eb19325c437f13bb4b532b83e5c4e062bdc69b92f96edc5c9dbcb4f223&"
+            "https://cdn.discordapp.com/attachments/1224586563510468619/1233318492028014612/gd_superagi_98661_Create_a_poster_Create_a_golden_starry_backgr_c6f54257-b644-41d9-8d62-fdf8d114048a.png?ex=662ca8da&is=662b575a&hm=473e41d88c45ff73d0a1085ff65a4729b7f32103798722fab98ccb62a268a923&",
+            "https://cdn.discordapp.com/attachments/1224586563510468619/1233318512777367594/gd_superagi_98661_Create_a_poster_Create_a_golden_starry_backgr_0cab5700-4d66-4318-a12f-369de0a9d694.png?ex=662ca8df&is=662b575f&hm=73ccf224ab0ae3a5a44bf828431cee1037f4e799b7317967255e56c84d3323f9&",
+            "https://cdn.discordapp.com/attachments/1224586563510468619/1233318527851696140/gd_superagi_98661_Create_a_poster_Create_a_golden_starry_backgr_2e44e684-b3fe-4f70-9433-31e7f694b11d.png?ex=662ca8e2&is=662b5762&hm=210f56d6515f03fddf39dd3dfdaa08a7cbef0813769ff4272a9ab803f9587856&",
+            "https://cdn.discordapp.com/attachments/1224586563510468619/1233318543110438973/gd_superagi_98661_Create_a_poster_Create_a_golden_starry_backgr_0c1ec9a5-bf7b-46f9-93af-88fdbffd7b17.png?ex=662ca8e6&is=662b5766&hm=f95435c8aa172d9961a402e64318a6a3a5cd3e9524787f5e954011723cfdd322&"
         ]
     },
     "assets": [
         {
-            "x": 340,
-            "y": 100,
-            "width": 400,
-            "height": 300,
+            "x": 270,
+            "y": 150,
+            "width": 540,
+            "height": 405,
             "asset_uri": "mucho_mambo_logo.png"
         },
         {
-            "x": 720,
+            "x": 735,
             "y": 540,
-            "width": 300,
-            "height": 135,
+            "width": 230,
+            "height": 104,
             "asset_uri": "buffalo_wild_wings_logo.png"
         },
         {
-            "x": 30,
-            "y": 900,
-            "width": 300,
-            "height": 83,
+            "x": 50,
+            "y": 780,
+            "width": 181,
+            "height": 50,
             "asset_uri": "palladium_dance_company_logo.png"
-        }
-    ],
-    "images": [
-        {
-            "x": 100,
-            "y": 400,
-            "width": 880,
-            "height": 600,
-            "prompt": "A high-resolution photograph of a couple doing salsa, serving as the central focal point on a salsa social event poster",
-            "urls": [
-                "https://cdn.discordapp.com/attachments/1224586563510468619/1232956458250010696/gd_superagi_98661_A_high-resolution_photograph_of_a_couple_doin_ac85c0bc-d33c-4fc5-9c1e-7e58815b3bcd.png?ex=662b57ae&is=662a062e&hm=74ee26d2b0a8b8a5b2f4fd9f97bb164825e3290e787407da2eba85362e927269&",
-                "https://cdn.discordapp.com/attachments/1224586563510468619/1232956475249397841/gd_superagi_98661_A_high-resolution_photograph_of_a_couple_doin_12ea12fe-d54a-4f27-b75f-4ea77e44d555.png?ex=662b57b2&is=662a0632&hm=7be7f545f7ea47ace87b98bbb5b63560c678260e76bfdc9eedef0f7f17e1ad30&",
-                "https://cdn.discordapp.com/attachments/1224586563510468619/1232956493201014854/gd_superagi_98661_A_high-resolution_photograph_of_a_couple_doin_7db508c1-1dfe-449d-b043-389eb9653416.png?ex=662b57b7&is=662a0637&hm=e39f8ee2f3b3d0744403ea1d9873289de0926e5fcc41f4246d3524a45304adeb&",
-                "https://cdn.discordapp.com/attachments/1224586563510468619/1232956512796803092/gd_superagi_98661_A_high-resolution_photograph_of_a_couple_doin_e7a5c79a-3683-4d69-a747-1227e5228c14.png?ex=662b57bb&is=662a063b&hm=37130aa5775385e9621b554ce7f40eb5e6cefb35c0a3f5398d968768191ce574&"
-            ]
         }
     ],
     "texts": [
         {
             "x": 540,
-            "y": 300,
-            "font_size": 48,
+            "y": 50,
+            "font_size": 36,
             "font_style": "Modern, Bold",
             "content": "Mucho Mambo"
         },
         {
-            "x": 540,
-            "y": 200,
-            "font_size": 36,
+            "x": 270,
+            "y": 600,
+            "font_size": 24,
             "font_style": "Modern, Bold",
             "content": "Thursday 9PM to 12 PM"
         },
         {
-            "x": 900,
-            "y": 720,
-            "font_size": 24,
-            "font_style": "Modern",
-            "content": "At Buffalo Wild Wings, Indiranagar"
-        },
-        {
-            "x": 150,
-            "y": 960,
-            "font_size": 24,
+            "x": 270,
+            "y": 900,
+            "font_size": 20,
             "font_style": "Elegant",
             "content": "Organised by Palladium Dance Company"
         }

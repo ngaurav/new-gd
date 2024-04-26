@@ -1,5 +1,5 @@
 from utils import askgpt, getjson
-from step2_prompts import step2_system_prompt
+from step2_prompts2 import step2_system_prompt
 import json
 
 with open('config.json', 'r') as f:

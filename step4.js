@@ -67,9 +67,11 @@ fabric.nodeCanvas.registerFont('ttf_files/Condiment-Regular.ttf', {
     family: 'condiment'
 });
 
+const poster_image = step3_output.poster_image
+
 const canvas = new fabric.Canvas('canvas', {
-    width: step3_output.background.width,
-    height: step3_output.background.height
+    width: poster_image.width,
+    height: poster_image.height
 });
 
 async function addImageToCanvas(url, width, height, x, y) {
@@ -114,12 +116,12 @@ async function addAssetToCanvas(asset_uri, width, height, x, y) {
 // Function to create canvas and render elements
 async function createCanvas() {
     // Add Background to Canvas
-    await addImageToCanvas(step3_output.background.urls[0], step3_output.background.width, step3_output.background.height, step3_output.background.x, step3_output.background.y)
+    await addImageToCanvas(poster_image.urls[0], poster_image.width, poster_image.height, poster_image.x, poster_image.y)
     // Add all the foreground images to Canvas
-    for (let i = 0; i < step3_output.images.length; i++) {
-        image = step3_output.images[i]
-        await addImageToCanvas(image.urls[0], image.width, image.height, image.x, image.y)
-    }
+    // for (let i = 0; i < step3_output.images.length; i++) {
+    //     image = step3_output.images[i]
+    //     await addImageToCanvas(image.urls[0], image.width, image.height, image.x, image.y)
+    // }
     // Add all the assets to Canvas
     for (let i = 0; i < step3_output.assets.length; i++) {
         asset = step3_output.assets[i]
