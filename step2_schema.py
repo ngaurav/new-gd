@@ -3,15 +3,15 @@ from typing import List
 
 
 class Asset(BaseModel):
-    x: int
-    y: int
+    left: int = Field(..., description="x co-ordinate of the asset in pixels")
+    top: int = Field(..., description="y co-ordinate of the asset in pixels")
     width: int
     height: int
     asset_uri: str
 
 class Text(BaseModel):
-    x: int
-    y: int
+    center_x: int = Field(..., description="x co-ordinate of the center of the text in pixels")
+    center_y: int = Field(..., description="y co-ordinate of the center of the text in pixels")
     font_size: int
     font_family: str
     content: str

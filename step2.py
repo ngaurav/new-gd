@@ -17,6 +17,9 @@ if __name__ == "__main__":
         os.makedirs(config['STEP3_OUTPUT_FOLDER'])
     i = 0
     for url in step1_response['urls']:
+        fpath = os.path.join(config['STEP0_OUTPUT_FOLDER'],f"step1_output{i}.json")
+        with open(fpath, 'r') as f:
+            step1_response = json.load(f)
         system_prompt = step2_system_prompt.replace(r"<width>", str(step1_response['width'])).replace(r"<height>", str(step1_response['height']))
         llm_output = askgpt(json.dumps(step1_response['elements']), system=system_prompt)
         step2_response = getjson(llm_output)
