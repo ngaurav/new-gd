@@ -1,12 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List
 
-class Image(BaseModel):
-    x: int
-    y: int
-    width: int
-    height: int
-    prompt: str
 
 class Asset(BaseModel):
     x: int
@@ -15,15 +9,13 @@ class Asset(BaseModel):
     height: int
     asset_uri: str
 
-class TextBox(BaseModel):
+class Text(BaseModel):
     x: int
     y: int
     font_size: int
-    font_style: str
+    font_family: str
     content: str
 
 class Poster(BaseModel):
-    background: Image
     assets: List[Asset]
-    images: List[Image]
-    texts: List[TextBox]
+    texts: List[Text]

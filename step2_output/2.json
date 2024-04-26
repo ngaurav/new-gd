@@ -1,0 +1,48 @@
+{
+    "assets": [
+        {
+            "x": 150,
+            "y": 150,
+            "width": 267,
+            "height": 200,
+            "asset_uri": "mucho_mambo_logo.png"
+        },
+        {
+            "x": 540,
+            "y": 620,
+            "width": 180,
+            "height": 81,
+            "asset_uri": "buffalo_wild_wings_logo.png"
+        },
+        {
+            "x": 300,
+            "y": 600,
+            "width": 200,
+            "height": 55,
+            "asset_uri": "palladium_dance_company_logo.png"
+        }
+    ],
+    "texts": [
+        {
+            "x": 210,
+            "y": 400,
+            "font_size": 30,
+            "font_family": "charm",
+            "content": "Salsa Social Night"
+        },
+        {
+            "x": 260,
+            "y": 450,
+            "font_size": 22,
+            "font_family": "garamond",
+            "content": "Thursday, 9PM - 12 PM"
+        }
+    ],
+    "poster_image": {
+        "x": 0,
+        "y": 0,
+        "width": 1080,
+        "height": 1080,
+        "url": "https://cdn.discordapp.com/attachments/1224586563510468619/1233344322485751878/gd_superagi_98661_Create_a_poster_Golden_starry_theme_backgroun_eda48be6-d73e-4e09-bd9a-72fc1c446fa7.png?ex=662cc0e8&is=662b6f68&hm=7078b5be642cbfab0fbb579edd5f80391af9562596220c110496bf442a668e23&"
+    }
+}

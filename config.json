@@ -5,7 +5,7 @@
     "STEP1_OUTPUT_FILE" : "step1_output.json",
     "STEP1_OUTPUT_FOLDER" : "step1_output",
     "STEP2_OUTPUT_FILE" : "step2_output.json",
-    "STEP3_OUTPUT_FOLDER" : "step3_output",
-    "STEP3_OUTPUT_FILE" : "step3_output.json",
-    "STEP4_OUTPUT_FOLDER" : "step4_output"
+    "STEP2_OUTPUT_FOLDER" : "step2_output",
+    "STEP3_OUTPUT_FILE" : "step3_output.png",
+    "STEP3_OUTPUT_FOLDER" : "step3_output"
 }

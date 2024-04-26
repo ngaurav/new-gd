@@ -3,8 +3,8 @@ const fabric = require('fabric').fabric;
 const path = require('path');
 
 var config = require('./config.json');
-const step3_output = JSON.parse(fs.readFileSync(config.STEP3_OUTPUT_FILE));
-const step4_response_folder = config.STEP4_OUTPUT_FOLDER;
+const step2_output = JSON.parse(fs.readFileSync(config.STEP2_OUTPUT_FILE));
+const step3_response_file = config.STEP3_OUTPUT_FILE;
 
 fabric.nodeCanvas.registerFont('ttf_files/BreeSerif-Regular.ttf', {
     family: 'bree serif'
@@ -67,7 +67,7 @@ fabric.nodeCanvas.registerFont('ttf_files/Condiment-Regular.ttf', {
     family: 'condiment'
 });
 
-const poster_image = step3_output.poster_image
+const poster_image = step2_output.poster_image
 
 const canvas = new fabric.Canvas('canvas', {
     width: poster_image.width,
@@ -116,38 +116,32 @@ async function addAssetToCanvas(asset_uri, width, height, x, y) {
 // Function to create canvas and render elements
 async function createCanvas() {
     // Add Background to Canvas
-    await addImageToCanvas(poster_image.urls[0], poster_image.width, poster_image.height, poster_image.x, poster_image.y)
+    await addImageToCanvas(poster_image.url, poster_image.width, poster_image.height, poster_image.x, poster_image.y)
     // Add all the foreground images to Canvas
     // for (let i = 0; i < step3_output.images.length; i++) {
     //     image = step3_output.images[i]
     //     await addImageToCanvas(image.urls[0], image.width, image.height, image.x, image.y)
     // }
     // Add all the assets to Canvas
-    for (let i = 0; i < step3_output.assets.length; i++) {
-        asset = step3_output.assets[i]
+    for (let i = 0; i < step2_output.assets.length; i++) {
+        asset = step2_output.assets[i]
         await addAssetToCanvas(asset.asset_uri, asset.width, asset.height, asset.x, asset.y)
     }
     // Add all the texts to Canvas
-    const textElements = step3_output.texts.map(t => {
+    const textElements = step2_output.texts.map(t => {
         return createDynamicText(t.content, t.x, t.y, "bree serif", 'regular', "#FFFFFF", t.font_size, 'normal');
     })
     const group = new fabric.Group(textElements, {});//check
     canvas.add(group);
     // Render everything
     canvas.renderAll();
-
-    // Check if the directory exists
-    if (!fs.existsSync(step4_response_folder)) {
-        // If it doesn't exist, create it
-        fs.mkdirSync(step4_response_folder, { recursive: true });
-    }
     
     // Save PNG
-    const out = fs.createWriteStream(step4_response_folder + `/output.png`);
+    const out = fs.createWriteStream(__dirname + '/' + step3_response_file);
     const stream = canvas.createPNGStream();
     stream.pipe(out);
     out.on('finish', () => {
-        console.log(`PNG saved successfully as output.png.`);
+        console.log(`PNG saved successfully.`);
     });
 };
 

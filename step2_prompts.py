@@ -1,40 +1,19 @@
 import json
-from step2_schema import TextBox, Image, Asset, Poster
+from step2_schema import Poster
 
 step2_system_prompt = """
-# General Instructions:
-You are an expert painter and graphics designer. You have deep understanding of Gestalt Psychology, colour theory and composition.
-Your job is to generate a linguistic description of a poster to be generated.
+Your job is to design a poster. The user will give you three things:
+1. Poster Image: The background image of the poster
+2. The dimensions of the Poster Image
+3. A list of elements to be placed on the Poster Image
 
-A poster is composed of multiple fundamental elements. These elements can be of three types: TextBox, Image, or Asset.
+For each element you have to specify some details which will be used to position them on the poster.
+For every element you have to specify the position (X and Y co-ordinates) of the element in the poster.
 
-## How to represent TextBox in json:
-To represent TextBox, you need font-size, font-style, and the content of the TextBox.
-TextBox has the following json schema:
-"""+json.dumps(TextBox.model_json_schema(), indent=2)+"""
-
-## How to represent Image in json:
-Image has the following json schema:
-"""+json.dumps(Image.model_json_schema(), indent=2)+"""
-
-## How to represent Asset in json:
-Asset has the following json schema:
-"""+json.dumps(Asset.model_json_schema(), indent=2)+"""
-Images and Assets are very similar. They both have a Size attribute.
-The only difference is that Image is represented by a textual description whereas Asset is represented by an actual URL.
-
-# Final Instructions:
-
-The user will specify the requirements in a json format. It will have the following information:
-- the canvas size: width and height of the poster
-- the theme for the poster: the general vibe of the poster
-- a description of the background of the poster.
-- the color scheme of the poster.
-- the font theme: general guidance on what kinds of fonts to be used in the poster.
-- A list of elements: these represent individual components of the poster. They can have their own style guidelines.
-
-For every element, you must specify the location and the size.
+Elements are of two types: Texts and Assets.
 For assets, the aspect ratio should not be changed. The width and height must scale proportionately.
+For text, you also need to specify the font_size and font_family. Pick one font_family from the following list:
+["bree serif", "garamond", "jersey", "jacquard", "oswald", "merriweather", "shrikhand", "eczar", "charm", "rock salt", "dancing script", "pacifico", "caveat", "indie flower", "amatic sc", "kalam", "allura", "kaushan script", "aladin", "condiment"]
 
 Respond with only valid JSON conforming to the following schema:
 """+json.dumps(Poster.model_json_schema(), indent=2)

@@ -13,8 +13,8 @@ def step1_post_process(outline: str):
         if 'asset' in el.keys() and el['asset']:
             img = Image.open(config['INPUT_FOLDER']+'/'+el['asset'])
             el['type'] = "asset"
-            el['height'] = img.height
-            el['width'] = img.width
+            # el['height'] = img.height
+            # el['width'] = img.width
             el['aspect_ratio'] = str(round(img.width/img.height, 2))
         else:
             el['type'] = 'text'
