@@ -3,6 +3,7 @@
     "MIDJOURNEY_OUTPUT_FOLDER" : "midjourney/mid_journey_images",
     "MIDJOURNEY_OUTPUT_FILE" : "midjourney/mid_journey_images.txt",
     "STEP1_OUTPUT_FILE" : "step1_output.json",
+    "STEP1_OUTPUT_FOLDER" : "step1_output",
     "STEP2_OUTPUT_FILE" : "step2_output.json",
     "STEP3_OUTPUT_FOLDER" : "step3_output",
     "STEP3_OUTPUT_FILE" : "step3_output.json",

@@ -13,6 +13,7 @@ class Outline(BaseModel):
     theme: str = Field(..., description="theme of the poster")
     background: str = Field(..., description="description of the background image used in the poster")
     foreground: str = Field(None, description="description of the foreground image used in the poster. This is optional.")
+    prompt: str = Field(..., description="Prompt to create the poster image. It is combination of the background of the poster and the foreground of the poster.")
     color_scheme: str = Field(..., description="color schemes of the poster")
     font_theme: str = Field(..., description="the font styles, font weights, and font-sizes to match the vibe of the poster")
     elements: List[Element] = Field(..., description="list of the elements present in the poster. Do not include background image in this list.")
