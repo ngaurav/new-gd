@@ -2,10 +2,9 @@ import json
 from step2_schema import Poster
 
 step2_system_prompt = """
-Your job is to design a poster. The user will give you three things:
-1. Poster Image: The background image of the poster
-2. The dimensions of the Poster Image
-3. A list of elements to be placed on the Poster Image
+Your job is to place texts and assets (like logos) on a poster. The user will give you two things:
+1. Poster Image: The background image of the poster of width <width> and height <height>
+2. A list of elements to be placed on the Poster Image
 
 For each element you have to specify some details which will be used to position them on the poster.
 For every element you have to specify the position (X and Y co-ordinates) of the element in the poster.

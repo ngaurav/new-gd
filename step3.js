@@ -129,7 +129,7 @@ async function createCanvas() {
     }
     // Add all the texts to Canvas
     const textElements = step2_output.texts.map(t => {
-        return createDynamicText(t.content, t.x, t.y, "bree serif", 'regular', "#FFFFFF", t.font_size, 'normal');
+        return createDynamicText(t.content, t.x, t.y, t.font_family, 'regular', "#FFFFFF", t.font_size, 'normal');
     })
     const group = new fabric.Group(textElements, {});//check
     canvas.add(group);
@@ -179,10 +179,10 @@ function createDynamicText(text, left, top, fontFamily, fontWeight, fill, fontSi
     const textWidth = getTextWidth(text, fontFamily, fontWeight, fontSize);
 
     // Adjust the left position to center the text horizontally
-    textbox.set({
-        // fontSize: fontSize,
-        left: left - (textWidth / 2)
-    });
+    // textbox.set({
+    //     // fontSize: fontSize,
+    //     left: left - (textWidth / 2)
+    // });
 
     return textbox;
 }

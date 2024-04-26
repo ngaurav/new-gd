@@ -17,7 +17,8 @@ if __name__ == "__main__":
         os.makedirs(config['STEP3_OUTPUT_FOLDER'])
     i = 0
     for url in step1_response['urls']:
-        llm_output = askgptvision(json.dumps(step1_response['elements']), url, system=step2_system_prompt)
+        system_prompt = step2_system_prompt.replace(r"<width>", str(step1_response['width'])).replace(r"<height>", str(step1_response['height']))
+        llm_output = askgptvision(json.dumps(step1_response['elements']), url, system=system_prompt)
         step2_response = getjson(llm_output)
         step2_response['poster_image'] = {
             'x': 0,

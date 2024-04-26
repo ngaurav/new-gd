@@ -1,48 +1,41 @@
 {
     "assets": [
         {
-            "x": 50,
-            "y": 50,
-            "width": 256,
-            "height": 192,
+            "x": 270,
+            "y": 120,
+            "width": 400,
+            "height": 300,
             "asset_uri": "mucho_mambo_logo.png"
         },
         {
-            "x": 50,
-            "y": 650,
-            "width": 150,
-            "height": 68,
+            "x": 100,
+            "y": 430,
+            "width": 880,
+            "height": 396,
             "asset_uri": "buffalo_wild_wings_logo.png"
         },
         {
-            "x": 550,
-            "y": 650,
-            "width": 150,
-            "height": 42,
+            "x": 270,
+            "y": 850,
+            "width": 600,
+            "height": 166,
             "asset_uri": "palladium_dance_company_logo.png"
         }
     ],
     "texts": [
         {
-            "x": 320,
-            "y": 300,
+            "x": 300,
+            "y": 50,
             "font_size": 48,
-            "font_family": "dancing script",
+            "font_family": "allura",
             "content": "Salsa Social Night"
         },
         {
-            "x": 320,
-            "y": 360,
-            "font_size": 24,
+            "x": 300,
+            "y": 750,
+            "font_size": 36,
             "font_family": "garamond",
             "content": "Thursday, 9PM - 12 PM"
-        },
-        {
-            "x": 320,
-            "y": 400,
-            "font_size": 20,
-            "font_family": "merriweather",
-            "content": "Organised by Palladium Dance Company"
         }
     ],
     "poster_image": {

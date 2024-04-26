@@ -1,39 +1,39 @@
 {
     "assets": [
         {
-            "x": 150,
-            "y": 150,
-            "width": 267,
-            "height": 200,
+            "x": 100,
+            "y": 50,
+            "width": 300,
+            "height": 225,
             "asset_uri": "mucho_mambo_logo.png"
         },
         {
-            "x": 540,
-            "y": 620,
-            "width": 180,
-            "height": 81,
+            "x": 100,
+            "y": 900,
+            "width": 100,
+            "height": 45,
             "asset_uri": "buffalo_wild_wings_logo.png"
         },
         {
-            "x": 300,
-            "y": 600,
-            "width": 200,
-            "height": 55,
+            "x": 250,
+            "y": 870,
+            "width": 130,
+            "height": 36,
             "asset_uri": "palladium_dance_company_logo.png"
         }
     ],
     "texts": [
         {
-            "x": 210,
-            "y": 400,
-            "font_size": 30,
-            "font_family": "charm",
+            "x": 100,
+            "y": 300,
+            "font_size": 34,
+            "font_family": "dancing script",
             "content": "Salsa Social Night"
         },
         {
-            "x": 260,
-            "y": 450,
-            "font_size": 22,
+            "x": 100,
+            "y": 350,
+            "font_size": 24,
             "font_family": "garamond",
             "content": "Thursday, 9PM - 12 PM"
         }
