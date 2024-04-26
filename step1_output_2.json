@@ -1,0 +1,47 @@
+{
+    "width": 1080,
+    "height": 1080,
+    "theme": "Salsa Dance Night",
+    "background": "A golden starry theme",
+    "foreground": "A photograph of a couple performing salsa dance",
+    "color_scheme": "Golden, Black, and Red",
+    "font_theme": "Elegant, Bold headlines with script fonts for decorative elements",
+    "elements": [
+        {
+            "name": "title",
+            "description": "Mucho Mambo",
+            "asset": "mucho_mambo_logo.png",
+            "style": "Large, bold and central positioning",
+            "type": "asset",
+            "height": 360,
+            "width": 480,
+            "aspect_ratio": "1.33"
+        },
+        {
+            "name": "date and time",
+            "description": "Thursday 9PM to 12 PM",
+            "style": "Visible in upper half, elegant and clear font",
+            "type": "text"
+        },
+        {
+            "name": "venue",
+            "description": "At Buffalo Wild Wings, Indiranagar",
+            "asset": "buffalo_wild_wings_logo.png",
+            "style": "Lower half of the poster, clear, easy to read font",
+            "type": "asset",
+            "height": 563,
+            "width": 1248,
+            "aspect_ratio": "2.22"
+        },
+        {
+            "name": "organizer",
+            "description": "Organised by Palladium Dance Company",
+            "asset": "palladium_dance_company_logo.png",
+            "style": "Small font at the bottom, less prominent but readable",
+            "type": "asset",
+            "height": 83,
+            "width": 300,
+            "aspect_ratio": "3.61"
+        }
+    ]
+}

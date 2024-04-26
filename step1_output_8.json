@@ -1,46 +1,44 @@
 {
     "width": 1080,
-    "height": 1080,
+    "height": 1350,
     "theme": "Salsa Social Event",
-    "background": "Golden starry theme",
-    "color_scheme": "Gold, Red, Black",
-    "font_theme": "Modern, Festive",
+    "background": "Golden starry theme as the background",
+    "foreground": "Real photograph of a couple doing salsa",
+    "color_scheme": "Golden hues with accents of black and red",
+    "font_theme": "Elegant and vibrant font, possibly with some flair or calligraphic elements",
     "elements": [
         {
-            "name": "Title",
+            "name": "title",
             "description": "Mucho Mambo",
             "asset": "mucho_mambo_logo.png",
-            "style": "Large, Bold, Centered",
+            "style": "Large, elegant font with golden color to match the background",
             "type": "asset",
+            "height": 360,
+            "width": 480,
             "aspect_ratio": "1.33"
         },
         {
-            "name": "Date and Time",
+            "name": "date and time",
             "description": "Thursday 9PM to 12 PM",
-            "style": "Bold, Center-top placement",
             "type": "text"
         },
         {
-            "name": "Venue",
+            "name": "venue",
             "description": "At Buffalo Wild Wings, Indiranagar",
             "asset": "buffalo_wild_wings_logo.png",
-            "style": "Visible, Middle-right placement",
             "type": "asset",
+            "height": 563,
+            "width": 1248,
             "aspect_ratio": "2.22"
         },
         {
-            "name": "Organizer",
+            "name": "organizer",
             "description": "Organised by Palladium Dance Company",
             "asset": "palladium_dance_company_logo.png",
-            "style": "Elegant, Bottom-left placement",
             "type": "asset",
+            "height": 83,
+            "width": 300,
             "aspect_ratio": "3.61"
-        },
-        {
-            "name": "Foreground Image",
-            "description": "A real photograph of a couple doing salsa",
-            "style": "Central focus, High resolution",
-            "type": "image"
         }
     ]
 }

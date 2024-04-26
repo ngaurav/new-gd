@@ -20,7 +20,10 @@ For the Image elements, the description of the element will contain the detailed
 Some elements can have an asset (file) associated with it. The user will provide a list of assets which can be attached to an element.
 The user can also provide specific design instructions for individual elements. You need to capture this as the style of the element.
 
-DO NOT ADD ANY ELEMENT WHICH USER HAS NOT MENTIONED.
+HERE ARE YOUR CONSTRAINTS:
+1. DO NOT ADD ANY ELEMENT WHICH USER HAS NOT MENTIONED.
+2. DO NOT MERGE MULTIPLE ELEMENTS INTO ONE ELEMENT. CREATE SEPARATE ELEMENTS.
+2. DO NOT CREATE SEPARATE ELEMENTS JUST FOR AN ASSET. FIND THE RIGHT TEXT ELEMENT TO WHICH THE ASSET CAN BE ATTACHED.
 
 Respond with only valid JSON conforming to the following schema:
 """+json.dumps(Outline.model_json_schema(), indent=2)

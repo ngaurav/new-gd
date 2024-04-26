@@ -6,7 +6,6 @@ class Element(BaseModel):
     description: str = Field(..., description="description of the contents of the element")
     asset: str = Field(None, description="asset associated with the element")
     style: str = Field(None, description="description of the design theme related to this element")
-    placement: str = Field(None, description="placement of the element in the poster")
 
 class Outline(BaseModel):
     width: int = Field(..., description="width of the poster in pixels")
