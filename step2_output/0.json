@@ -4,38 +4,38 @@
             "left": 270,
             "top": 50,
             "width": 540,
-            "height": 405,
+            "height": 406,
             "asset_uri": "mucho_mambo_logo.png"
         },
         {
-            "left": 0,
-            "top": 675,
-            "width": 222,
-            "height": 100,
+            "left": 50,
+            "top": 1114,
+            "width": 446,
+            "height": 201,
             "asset_uri": "buffalo_wild_wings_logo.png"
         },
         {
-            "left": 758,
-            "top": 675,
-            "width": 322,
-            "height": 89,
+            "left": 622,
+            "top": 1174,
+            "width": 458,
+            "height": 127,
             "asset_uri": "palladium_dance_company_logo.png"
         }
     ],
     "texts": [
         {
             "center_x": 540,
-            "center_y": 550,
-            "font_size": 40,
+            "center_y": 560,
+            "font_size": 24,
             "font_family": "oswald",
-            "content": "Thursday 9PM to 12 PM"
+            "content": "Thursday 9PM to 12PM"
         }
     ],
     "poster_image": {
         "x": 0,
         "y": 0,
         "width": 1080,
-        "height": 1080,
-        "url": "https://cdn.discordapp.com/attachments/1224586563510468619/1233593027998646392/gd_superagi_98661_Create_a_poster_A_pitch_black_background_with_837bff31-c18c-4df5-ab3b-fefc968c7b1c.png?ex=662da888&is=662c5708&hm=3c86bc4b5a4c552ae4f0d762d00c7f30987bd32c5c1cacfccdac5999125ba923&"
+        "height": 1350,
+        "url": "https://cdn.discordapp.com/attachments/1224586563510468619/1233792630354350080/gd_superagi_98661_Create_a_poster_Pitch_black_background_with_m_97f603e6-e984-456a-9b34-bc72aa56ce08.png?ex=662e626d&is=662d10ed&hm=f3961d26b12209439dd6a4bfa948eeb56b5b93babc572f19a9215d1beb3b50ba&"
     }
 }

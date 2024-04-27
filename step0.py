@@ -12,18 +12,24 @@ if __name__ == "__main__":
     title_placement_x = ['center', 'center', 'center', 'center']
     title_placement_y = ['top', 'slightly above center', 'center', 'slightly below center']
     subtitle_placement_x = ['center', 'center', 'center', 'center']
-    subtitle_placement_y = ['slightly above center', 'center', 'slightly below center', 'bottom']
+    subtitle_placement_y = ['below title', 'below title', 'below title', 'below title']
     other_placement_x = ['left', 'right', 'left', 'right']
     other_placement_y = ['bottom', 'bottom', 'top', 'top']
     for i in range(4):
         output_file = os.path.join(config['STEP0_OUTPUT_FOLDER'],f"step1_output{i}.json")
+        count = 0
         for element in step1_response['elements']:
-            if element['important']:
+            if element['prominence'] == 'high':
+                count += 1
+                element['tag'] = 'title'
                 element['placement_x'] = title_placement_x[i]
                 element['placement_y'] = title_placement_y[i]
-            elif element['type'] == 'text':
-                element['placement_x'] = subtitle_placement_x[i]
-                element['placement_y'] = subtitle_placement_y[i]
+        if count <=1:
+            for element in step1_response['elements']:
+                if element['prominence'] == 'medium' and element['type'] == 'text':
+                    element['tag'] = 'subtitle'
+                    element['placement_x'] = subtitle_placement_x[i]
+                    element['placement_y'] = subtitle_placement_y[i]
         j = 0
         for element in step1_response['elements']:
             if not 'placement_x' in element:

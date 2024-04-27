@@ -13,7 +13,9 @@ A poster outline has the following important info:
 
 Additionally, the poster outline will also contain a list of elements.
 Each of the elements will have a name and a description.
-The name of the element will suggest the purpose: like title, subtitle, venue, date, time, CTA, foreground image, background image, logo, etc.
+Every element will also have a prominence level.
+If the element is of highest importance then it should be of `high` prominence.
+Most elements will have a `medium` prominence, and if there are more than five elements then some lesser important elements will have `low` prominence.
 The elements are usually of two types: Image and Text.
 For the Text elements, the description of the element will contain the exact content of the text.
 For the Image elements, the description of the element will contain the detailed textual description of the visuals in the image.

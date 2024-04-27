@@ -5,8 +5,7 @@ class Element(BaseModel):
     name: str = Field(..., description="title of the element")
     description: str = Field(..., description="description of the contents of the element")
     asset: str = Field(None, description="asset associated with the element")
-    placement: str = Field(..., description="placement of the element within the poster")
-    important: bool = Field(..., description="True if the element is the most prominent element")
+    prominence: bool = Field(..., description="should be one of [high, medium, low]")
     style: str = Field(None, description="description of the design theme related to this element")
 
 class Outline(BaseModel):
