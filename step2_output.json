@@ -1,34 +1,34 @@
 {
     "assets": [
         {
+            "asset_uri": "mucho_mambo_logo.png",
             "left": 270,
-            "top": 360,
+            "top": 450,
             "width": 540,
-            "height": 405,
-            "asset_uri": "mucho_mambo_logo.png"
+            "height": 405
         },
         {
-            "left": 810,
-            "top": 900,
-            "width": 270,
-            "height": 121,
-            "asset_uri": "buffalo_wild_wings_logo.png"
-        },
-        {
+            "asset_uri": "buffalo_wild_wings_logo.png",
             "left": 0,
-            "top": 900,
-            "width": 300,
-            "height": 83,
-            "asset_uri": "palladium_dance_company_logo.png"
+            "top": 940,
+            "width": 200,
+            "height": 90
+        },
+        {
+            "asset_uri": "palladium_dance_company_logo.png",
+            "left": 820,
+            "top": 920,
+            "width": 260,
+            "height": 72
         }
     ],
     "texts": [
         {
+            "content": "Thursday 9PM to 12 PM",
             "center_x": 540,
-            "center_y": 990,
-            "font_size": 20,
-            "font_family": "allura",
-            "content": "Thursday 9PM to 12AM"
+            "center_y": 1020,
+            "font_size": 24,
+            "font_family": "garamond"
         }
     ],
     "poster_image": {
@@ -36,6 +36,6 @@
         "y": 0,
         "width": 1080,
         "height": 1080,
-        "url": "https://cdn.discordapp.com/attachments/1224586563510468619/1233344338281500695/gd_superagi_98661_Create_a_poster_Golden_starry_theme_backgroun_f86f91d1-7fb5-46c5-aaf9-ef2a84750282.png?ex=662cc0ec&is=662b6f6c&hm=2aeffe5a5f5af0d10a407c2fe7ebee749342a7e16768557b5ef45f5d1221a17c&"
+        "url": "https://cdn.discordapp.com/attachments/1224586563510468619/1233593079097851945/gd_superagi_98661_Create_a_poster_A_pitch_black_background_with_a5f84bc5-f6e2-41f5-bb35-2b26bddd656d.png?ex=662da895&is=662c5715&hm=a9fa4c814accb8aa35c550a4aef28dad763bbdfc7934f4e7f29b0279d0c79e73&"
     }
 }

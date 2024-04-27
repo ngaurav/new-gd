@@ -32,7 +32,7 @@ step1_user_prompt_1 = """
 Design a poster for a Salsa Social Event for Instagram. The event is titled Mucho Mambo.
 It is happening on Thursday 9PM to 12 PM At Buffalo Wild Wings, Indiranagar.
 The event is organised by Palladium Dance Company.
-Please use a Golden starry theme for the background and in the foreground use a real photograph of a couple doing salsa.
+Please use a pitch black background with minimal stars and in the foreground use a real photograph of a couple doing salsa.
 
 You can use the assets:
 mucho_mambo_logo.png
