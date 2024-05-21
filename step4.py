@@ -12,7 +12,7 @@ with open('config.json', 'r') as f:
 
 prominence_ranges = [0.75,0.5,0.3,0.2,0.15,0.1]
 font_sizes = [1,0.6,0.35,0.2,0.15]
-spacing = [40,25,15,9,6]
+spacing = [40,20,12,8,4]
 font_factor = 48.0
 
 from PIL import Image, ImageDraw
