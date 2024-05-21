@@ -16,7 +16,7 @@ if __name__ == "__main__":
     other_placement_x = ['left', 'right', 'left', 'right']
     other_placement_y = ['bottom', 'bottom', 'top', 'top']
     for i in range(4):
-        output_file = os.path.join(config['STEP0_OUTPUT_FOLDER'],f"step1_output{i}.json")
+        output_file = os.path.join(config['STEP0_OUTPUT_FOLDER'],f"{config['STEP0_OUTPUT_PREFIX']}{i}.json")
         count = 0
         for element in step1_response['elements']:
             if element['prominence'] == 'high':
