@@ -129,7 +129,7 @@ def draw(width, height, elements, font):
         priority = elements[i]['prominence']
         ft = font.font_variant(size=font_sizes[priority-1] * font_factor)
         # to test multiline support remove the comment in the following line 
-        max_width = prominence_ranges[priority-1] * width * 0.8
+        max_width = prominence_ranges[priority-1] * width # * 0.8
         wrapper = TextWrapper(text, ft, max_width)
         wrapped_text = wrapper.wrapped_text()
         draw.multiline_text(text_position, wrapped_text, spacing=spacing[priority-1], fill="black", font=ft)    
