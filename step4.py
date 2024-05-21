@@ -12,7 +12,72 @@ with open('config.json', 'r') as f:
 
 prominence_ranges = [0.75,0.5,0.3,0.2,0.15,0.1]
 font_sizes = [1,0.6,0.35,0.2,0.15]
+spacing = [40,25,15,9,6]
 font_factor = 48.0
+
+from PIL import Image, ImageDraw
+
+class TextWrapper(object):
+    """ Helper class to wrap text in lines, based on given text, font
+        and max allowed line width.
+    """
+
+    def __init__(self, text, font, max_width):
+        self.text = text
+        self.text_lines = [
+            ' '.join([w.strip() for w in l.split(' ') if w])
+            for l in text.split('\n')
+            if l
+        ]
+        self.font = font
+        self.max_width = max_width
+
+        self.draw = ImageDraw.Draw(
+            Image.new(
+                mode='RGB',
+                size=(100, 100)
+            )
+        )
+
+        self.space_width = self.draw.textlength(
+            text=' ',
+            font=self.font
+        )
+
+    def get_text_width(self, text):
+        return self.draw.textlength(
+            text=text,
+            font=self.font
+        )
+
+    def wrapped_text(self):
+        wrapped_lines = []
+        buf = []
+        buf_width = 0
+
+        for line in self.text_lines:
+            for word in line.split(' '):
+                word_width = self.get_text_width(word)
+
+                expected_width = word_width if not buf else \
+                    buf_width + self.space_width + word_width
+
+                if expected_width <= self.max_width:
+                    # word fits in line
+                    buf_width = expected_width
+                    buf.append(word)
+                else:
+                    # word doesn't fit in line
+                    wrapped_lines.append(' '.join(buf))
+                    buf = [word]
+                    buf_width = word_width
+
+            if buf:
+                wrapped_lines.append(' '.join(buf))
+                buf = []
+                buf_width = 0
+
+        return '\n'.join(wrapped_lines)
 
 def update_font_factor(font, text, priority, canvas_width, canvas_height):
     global font_sizes, font_factor, prominence_ranges
@@ -63,7 +128,11 @@ def draw(width, height, elements, font):
         text_position = (col * col_spacing + half_gutter_spacing, row * row_spacing + half_gutter_spacing)
         priority = elements[i]['prominence']
         ft = font.font_variant(size=font_sizes[priority-1] * font_factor)
-        draw.text(text_position, text, fill="black", font=ft)    
+        # to test multiline support remove the comment in the following line 
+        max_width = prominence_ranges[priority-1] * width # * 0.8
+        wrapper = TextWrapper(text, ft, max_width)
+        wrapped_text = wrapper.wrapped_text()
+        draw.multiline_text(text_position, wrapped_text, spacing=spacing[priority-1], fill="black", font=ft)    
     return image
 
 
