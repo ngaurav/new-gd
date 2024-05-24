@@ -151,4 +151,5 @@ if __name__ == "__main__":
         for el in step4_input['elements']:
             update_font_factor(font=font, text=el['description'], priority=el['prominence'], canvas_height=step4_input['height'], canvas_width=step4_input['width'])
         img = draw(height=step4_input['height'], width=step4_input['width'], elements=step4_input['elements'],font=font)
-        img.save(join(config['STEP4_OUTPUT_FOLDER'],f"{i}.png"))
+        img.save(join(config['STEP4_OUTPUT_FOLDER'],f"{file}.png"))
+        i = i + 1
