@@ -120,7 +120,73 @@ def update_font_factor(font, text, priority, canvas_width, canvas_height):
             font_factor = font_size/font_sizes[priority-1]
             # print ("condition 3 ", font_factor)
             return font_size
-        
+
+def add_alignment(grid:Grid, groups):
+    if grid.rows == 1 and grid.cols == 1:
+        for group in groups:
+            col = group['col']
+            row = group['row']
+            for element in group['elements']:
+                if col == 0 and row == 0:
+                    element['alignment_x'] = 0
+                    element['alignment_y'] = 0
+    elif grid.rows == 2 and grid.cols == 2:
+        for group in groups:
+            col = group['col']
+            row = group['row']
+            for element in group['elements']:
+                if col == 0 and row == 0:
+                    element['alignment_x'] = 1
+                    element['alignment_y'] = 1
+                elif col == 0 and row == 1:
+                    element['alignment_x'] = 1
+                    element['alignment_y'] = -1
+                elif col == 1 and row == 0:
+                    element['alignment_x'] = -1
+                    element['alignment_y'] = 1
+                elif col == 1 and row == 1:
+                    element['alignment_x'] = -1
+                    element['alignment_y'] = -1
+    elif grid.rows == 3 and grid.cols == 3:
+        for group in groups:
+            col = group['col']
+            row = group['row']
+            for element in group['elements']:
+                if col == 0 and row == 0:
+                    element['alignment_x'] = 1
+                    element['alignment_y'] = 1
+                elif col == 0 and row == 1:
+                    element['alignment_x'] = 0
+                    element['alignment_y'] = 1
+                elif col == 0 and row == 2:
+                    element['alignment_x'] = -1
+                    element['alignment_y'] = 1
+                elif col == 1 and row == 0:
+                    element['alignment_x'] = 1
+                    element['alignment_y'] = 0
+                elif col == 1 and row == 1:
+                    element['alignment_x'] = 0
+                    element['alignment_y'] = 0
+                elif col == 1 and row == 2:
+                    element['alignment_x'] = -1
+                    element['alignment_y'] = 0
+                elif col == 2 and row == 0:
+                    element['alignment_x'] = 1
+                    element['alignment_y'] = -1
+                elif col == 2 and row == 1:
+                    element['alignment_x'] = 0
+                    element['alignment_y'] = -1
+                elif col == 2 and row == 2:
+                    element['alignment_x'] = -1
+                    element['alignment_y'] = -1
+    else:
+        for group in groups:
+            for element in group['elements']:
+                element['alignment_x'] = 1
+                element['alignment_y'] = 1
+    return groups
+
+
 def draw(width, height, font, grid:Grid, groups):
     rows = grid.rows
     cols = grid.cols
@@ -147,6 +213,7 @@ def draw(width, height, font, grid:Grid, groups):
                 canvas_height=height,
                 canvas_width=width)
             
+    groups = add_alignment(grid, groups)
     for group in groups:
         elements = group['elements']
         col = group['col']
@@ -154,18 +221,28 @@ def draw(width, height, font, grid:Grid, groups):
         y = grid.vertical_padding + row * row_spacing + half_gutter_spacing
         for i in range(len(elements)):
             text = elements[i]['description']
-            text_position = (grid.horizontal_padding + col * col_spacing + half_gutter_spacing, y)
-            draw.line((0,y,width,y),fill="red", width=1)
             priority = elements[i]['prominence']
             ft = font.font_variant(size=font_sizes[priority-1] * font_factor)
-            # to test multiline support remove the comment in the following line 
-            # max_width = prominence_ranges[priority-1] * width # * 0.8
             wrapper = TextWrapper(text, ft, col_spacing - 2 * half_gutter_spacing)
             wrapped_text = wrapper.wrapped_text()
-            xy0, xy1, xy2, xy3 = draw.multiline_textbbox (text_position, wrapped_text, spacing=line_spacing[priority-1], font=ft)
-            draw.rectangle((xy0, xy1, xy2, xy3), outline='green')
-            draw.multiline_text(text_position, wrapped_text, spacing=line_spacing[priority-1], fill="black", font=ft)
-            y = xy3 + 2 * line_spacing[priority-1]
+            alignment_x = elements[i]['alignment_x']
+            if alignment_x > 0:
+                align = "left"
+            elif alignment_x == 0:
+                align = "center"
+            else:
+                align = "right"
+            xy0, xy1, xy2, xy3 = draw.multiline_textbbox((0,0), wrapped_text, spacing=line_spacing[priority-1], font=ft, align=align)
+            if alignment_x > 0:
+                x = grid.horizontal_padding + col * col_spacing + half_gutter_spacing
+            elif alignment_x == 0:
+                x = grid.horizontal_padding + (col + 0.5) * col_spacing - (xy2 - xy0)/2
+            else:
+                x = grid.horizontal_padding + (col+1) * col_spacing - half_gutter_spacing - (xy2 - xy0)
+            text_position = (x, y)
+            draw.line((0,y,width,y),fill="red", width=1)
+            draw.multiline_text(text_position, wrapped_text, spacing=line_spacing[priority-1], fill="black", align=align, font=ft)
+            y = y + (xy3-xy1) + 2 * line_spacing[priority-1]
 
     # cols = [0,0,0,1,1,1,2,2,2]
     # rows = [0,1,2,0,1,2,0,1,2]
