@@ -25,7 +25,7 @@
                 {
                     "name": "Subtitle",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Present sit amet leo erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-                    "prominence": 3,
+                    "prominence": 4,
                     "type": "text"
                 }
             ]

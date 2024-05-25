@@ -86,7 +86,8 @@ class TextWrapper(object):
                     buf.append(word)
                 else:
                     # word doesn't fit in line
-                    wrapped_lines.append(' '.join(buf))
+                    if (len(buf) > 0):
+                        wrapped_lines.append(' '.join(buf))
                     buf = [word]
                     buf_width = word_width
 
@@ -103,24 +104,24 @@ def update_font_factor(font, text, priority, canvas_width, canvas_height):
     max_size = canvas_width * prominence_ranges[priority-1]
     min_size = canvas_width * prominence_ranges[priority]
     while min_size < max_size:
-        print("font_size: ", font_size, " | max_size: ", max_size, " | min_size: ", min_size)
+        # print("font_size: ", font_size, " | max_size: ", max_size, " | min_size: ", min_size)
         font = font.font_variant(size=font_size)
         temp_image = Image.new('RGB', (int(max_size), int(canvas_height)), color='white')
         temp_draw = ImageDraw.Draw(temp_image)
         text_width = temp_draw.textlength(text, font=font)
-        print("text_width: ", text_width)
+        # print("text_width: ", text_width)
         if text_width >= max_size:
-            print ("condition 1")
+            # print ("condition 1")
             font_size = font_size * 0.8
         elif text_width <= min_size:
-            print ("condition 2")
+            # print ("condition 2")
             font_size = font_size * 1.25
         else:
             font_factor = font_size/font_sizes[priority-1]
-            print ("condition 3 ", font_factor)
+            # print ("condition 3 ", font_factor)
             return font_size
         
-def draw(width, height, font, grid:Grid):
+def draw(width, height, font, grid:Grid, groups):
     rows = grid.rows
     cols = grid.cols
     half_gutter_spacing = grid.gutter_margin/2
@@ -135,6 +136,36 @@ def draw(width, height, font, grid:Grid):
     for i in range(0, cols+1):
         draw.line((grid.horizontal_padding + i * col_spacing - half_gutter_spacing, 0, grid.horizontal_padding + i * col_spacing - half_gutter_spacing, height), fill="black", width=2)
         draw.line((grid.horizontal_padding + i * col_spacing + half_gutter_spacing, 0, grid.horizontal_padding + i * col_spacing + half_gutter_spacing, height), fill="black", width=2)
+
+    for group in groups:
+        elements = group['elements']
+        for el in elements:
+            update_font_factor(
+                font=font,
+                text=el['description'],
+                priority=el['prominence'],
+                canvas_height=height,
+                canvas_width=width)
+            
+    for group in groups:
+        elements = group['elements']
+        col = group['col']
+        row = group['row']
+        y = grid.vertical_padding + row * row_spacing + half_gutter_spacing
+        for i in range(len(elements)):
+            text = elements[i]['description']
+            text_position = (grid.horizontal_padding + col * col_spacing + half_gutter_spacing, y)
+            draw.line((0,y,width,y),fill="red", width=1)
+            priority = elements[i]['prominence']
+            ft = font.font_variant(size=font_sizes[priority-1] * font_factor)
+            # to test multiline support remove the comment in the following line 
+            # max_width = prominence_ranges[priority-1] * width # * 0.8
+            wrapper = TextWrapper(text, ft, col_spacing - 2 * half_gutter_spacing)
+            wrapped_text = wrapper.wrapped_text()
+            xy0, xy1, xy2, xy3 = draw.multiline_textbbox (text_position, wrapped_text, spacing=line_spacing[priority-1], font=ft)
+            draw.rectangle((xy0, xy1, xy2, xy3), outline='green')
+            draw.multiline_text(text_position, wrapped_text, spacing=line_spacing[priority-1], fill="black", font=ft)
+            y = xy3 + 2 * line_spacing[priority-1]
 
     # cols = [0,0,0,1,1,1,2,2,2]
     # rows = [0,1,2,0,1,2,0,1,2]
@@ -171,17 +202,11 @@ if __name__ == "__main__":
             cols=step4_input['grid']['cols'],
             rows=step4_input['grid']['rows']
         )
-        # for el in step4_input['elements']:
-        #     update_font_factor(
-        #         font=font,
-        #         text=el['description'],
-        #         priority=el['prominence'],
-        #         canvas_height=step4_input['height'],
-        #         canvas_width=step4_input['width'])
         img = draw(
             height=step4_input['height'],
             width=step4_input['width'],
             font=font,
-            grid=grid)
+            grid=grid,
+            groups=step4_input['groups'])
         img.save(join(config['STEP4_OUTPUT_FOLDER'],f"{file}.png"))
         i = i + 1
