@@ -7,12 +7,22 @@
     "prompt": "Pitch black background with minimal stars and a real photograph of a couple doing salsa in the foreground",
     "color_scheme": "Black background with vibrant green and red for text",
     "font_theme": "Modern and Bold for headers, Sleek and Clear for details",
-    "elements": [
+    "grid": {
+        "cols": 1,
+        "rows": 1
+    },
+    "groups": [
         {
-            "name": "Message",
-            "description": "YOU CAN",
-            "prominence": 3,
-            "type": "text"
+            "col": 0,
+            "row": 0,
+            "elements": [
+                {
+                    "name": "Message",
+                    "description": "YOU CAN",
+                    "prominence": 3,
+                    "type": "text"
+                }
+            ]
         }
     ],
     "urls": [

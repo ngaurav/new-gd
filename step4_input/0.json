@@ -7,24 +7,40 @@
     "prompt": "Pitch black background with minimal stars and a real photograph of a couple doing salsa in the foreground",
     "color_scheme": "Black background with vibrant green and red for text",
     "font_theme": "Modern and Bold for headers, Sleek and Clear for details",
-    "elements": [
+    "grid": {
+        "cols": 2,
+        "rows": 2
+    },
+    "groups": [
         {
-            "name": "Title",
-            "description": "Happy Monday",
-            "prominence": 2,
-            "type": "text"
+            "col": 0,
+            "row": 0,
+            "elements": [
+                {
+                    "name": "Title",
+                    "description": "Happy Monday",
+                    "prominence": 2,
+                    "type": "text"
+                },
+                {
+                    "name": "Subtitle",
+                    "description": "Have a Nice Day!!",
+                    "prominence": 3,
+                    "type": "text"
+                }
+            ]
         },
         {
-            "name": "Subtitle",
-            "description": "Have a Nice Day!!",
-            "prominence": 3,
-            "type": "text"
-        },
-        {
-            "name": "Social Handle",
-            "description": "@reallygreatsite",
-            "prominence": 4,
-            "type": "text"
+            "col": 1,
+            "row": 1,
+            "elements": [
+                {
+                    "name": "Social Handle",
+                    "description": "@reallygreatsite",
+                    "prominence": 4,
+                    "type": "text"
+                }
+            ]
         }
     ],
     "urls": [
