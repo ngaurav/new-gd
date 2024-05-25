@@ -195,6 +195,8 @@ def draw(width, height, font, grid:Grid, groups):
     draw = ImageDraw.Draw(image)
     row_spacing = grid.row_spacing
     col_spacing = grid.col_spacing
+    draw.line((0, height/2, width, height/2), fill="red", width=1)
+    draw.line((width/2, 0, width/2, height), fill="red", width=1)
     for i in range(0, rows+1):
         draw.line((0, grid.vertical_padding + i * row_spacing - half_gutter_spacing, width, grid.vertical_padding + i * row_spacing - half_gutter_spacing), fill="black", width=2)
         draw.line((0, grid.vertical_padding + i * row_spacing + half_gutter_spacing, width, grid.vertical_padding + i * row_spacing + half_gutter_spacing), fill="black", width=2)
@@ -214,15 +216,21 @@ def draw(width, height, font, grid:Grid, groups):
                 canvas_width=width)
             
     groups = add_alignment(grid, groups)
+    # TODO: Sort groups to put similar priority together in y-axis
+    # TODO: Heirarchy (Rule of odds)
+    # TODO: Hanging indent for bullets, etc.
+    # TODO: Hanging indent for images.
     for group in groups:
         elements = group['elements']
         col = group['col']
         row = group['row']
-        y = grid.vertical_padding + row * row_spacing + half_gutter_spacing
+        y_start = grid.vertical_padding + row * row_spacing + half_gutter_spacing
+        y = y_start
         for i in range(len(elements)):
+            prominence = elements[i]['prominence']
+            # y = y + line_spacing[prominence-1]
             text = elements[i]['description']
-            priority = elements[i]['prominence']
-            ft = font.font_variant(size=font_sizes[priority-1] * font_factor)
+            ft = font.font_variant(size=font_sizes[prominence-1] * font_factor)
             wrapper = TextWrapper(text, ft, col_spacing - 2 * half_gutter_spacing)
             wrapped_text = wrapper.wrapped_text()
             alignment_x = elements[i]['alignment_x']
@@ -232,33 +240,35 @@ def draw(width, height, font, grid:Grid, groups):
                 align = "center"
             else:
                 align = "right"
-            xy0, xy1, xy2, xy3 = draw.multiline_textbbox((0,0), wrapped_text, spacing=line_spacing[priority-1], font=ft, align=align)
+            xy0, xy1, xy2, xy3 = draw.multiline_textbbox((0,0), wrapped_text, spacing=line_spacing[prominence-1], font=ft, align=align)
             if alignment_x > 0:
                 x = grid.horizontal_padding + col * col_spacing + half_gutter_spacing
             elif alignment_x == 0:
                 x = grid.horizontal_padding + (col + 0.5) * col_spacing - (xy2 - xy0)/2
             else:
                 x = grid.horizontal_padding + (col+1) * col_spacing - half_gutter_spacing - (xy2 - xy0)
-            text_position = (x, y)
-            draw.line((0,y,width,y),fill="red", width=1)
-            draw.multiline_text(text_position, wrapped_text, spacing=line_spacing[priority-1], fill="black", align=align, font=ft)
-            y = y + (xy3-xy1) + 2 * line_spacing[priority-1]
-
-    # cols = [0,0,0,1,1,1,2,2,2]
-    # rows = [0,1,2,0,1,2,0,1,2]
-    # for i in range(len(elements)):
-    #     col = cols[i]
-    #     row = rows[i]
-    #     text = elements[i]['description']
-    #     print(text)
-    #     text_position = (col * col_spacing + half_gutter_spacing, row * row_spacing + half_gutter_spacing)
-    #     priority = elements[i]['prominence']
-    #     ft = font.font_variant(size=font_sizes[priority-1] * font_factor)
-    #     # to test multiline support remove the comment in the following line 
-    #     max_width = prominence_ranges[priority-1] * width # * 0.8
-    #     wrapper = TextWrapper(text, ft, max_width)
-    #     wrapped_text = wrapper.wrapped_text()
-    #     draw.multiline_text(text_position, wrapped_text, spacing=line_spacing[priority-1], fill="black", font=ft)    
+            elements[i]['x'] = x
+            elements[i]['y'] = y
+            elements[i]['text'] = wrapped_text
+            elements[i]['align'] = align
+            y = y + (xy3-xy1) + 2 * line_spacing[prominence-1]
+        for element in elements:
+            prominence = element['prominence']
+            ft = font.font_variant(size=font_sizes[prominence-1] * font_factor)
+            alignment_y = element['alignment_y']
+            if alignment_y > 0:
+                y_delta = 0
+            elif alignment_y == 0:
+                y_delta = (row_spacing - 2*half_gutter_spacing - (y-y_start))/2
+            elif alignment_y < 0:
+                y_delta = row_spacing - 2*half_gutter_spacing - (y-y_start)
+            draw.multiline_text(
+                (element['x'], element['y']+y_delta),
+                element['text'],
+                spacing=line_spacing[prominence-1],
+                fill="black",
+                align=element['align'],
+                font=ft)
     return image
 
 if __name__ == "__main__":
