@@ -260,7 +260,7 @@ def draw(width, height, font:ImageFont, grid:Grid, groups):
             print(text, n_lines)
             new_y = y + n_lines*font_sizes[prominence-1] * font_factor + (n_lines-1)*line_spacing[prominence-1] + 0.5 * font_sizes[prominence-1] * font_factor
             elements[i]['y_height'] = new_y - y
-            y = new_y
+            y = y + xy3-xy1 +  0.5 * font_sizes[prominence-1] * font_factor
         for element in elements:
             prominence = element['prominence']
             ft = font.font_variant(size=font_sizes[prominence-1] * font_factor)
