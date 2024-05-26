@@ -122,7 +122,6 @@ def update_font_factor(font, text, priority, canvas_width, canvas_height):
             return font_size
 
 def add_alignment(grid:Grid, groups):
-    #TODO: Add 2 col, 1 row 
     if grid.rows == 1 and grid.cols == 1:
         for group in groups:
             col = group['col']
@@ -130,6 +129,17 @@ def add_alignment(grid:Grid, groups):
             for element in group['elements']:
                 if col == 0 and row == 0:
                     element['alignment_x'] = 0
+                    element['alignment_y'] = 0
+    elif grid.rows == 1 and grid.cols == 2:  # Added this loop for "2 col, 1 row"
+        for group in groups:
+            col = group['col']
+            row = group['row']
+            for element in group['elements']:
+                if col == 0 and row == 0:
+                    element['alignment_x'] = 1
+                    element['alignment_y'] = 0
+                elif col == 1 and row == 0:
+                    element['alignment_x'] = -1
                     element['alignment_y'] = 0
     elif grid.rows == 2 and grid.cols == 2:
         for group in groups:
@@ -219,10 +229,7 @@ def draw(width, height, font, grid:Grid, groups):
                 canvas_width=width)
             
     groups = add_alignment(grid, groups)
-    # TODO: Sort groups to put similar priority together in y-axis
-    # TODO: Heirarchy (Rule of odds)
-    # TODO: Hanging indent for bullets, quotes, etc.
-    # TODO: Hanging indent for images.
+
     for group in groups:
         elements = group['elements']
         col = group['col']
