@@ -234,8 +234,10 @@ def draw(width, height, font:ImageFont, grid:Grid, groups):
             prominence = elements[i]['prominence']
             text = elements[i]['description']
             ft = font.font_variant(size=font_sizes[prominence-1] * font_factor)
-            _,_,_,line_height =ft.getbbox('A')
-            # y = y + line_height * 0.25
+            ascent, descent = ft.getmetrics()
+            (width, baseline), (offset_x, offset_y) = ft.font.getsize("A")
+            line_height = ascent + descent
+            # y = y + 0.25 * font_sizes[prominence-1] * font_factor
             wrapper = TextWrapper(text, ft, col_spacing - 2 * half_gutter_spacing)
             wrapped_text = wrapper.wrapped_text()
             alignment_x = elements[i]['alignment_x']
@@ -257,10 +259,11 @@ def draw(width, height, font:ImageFont, grid:Grid, groups):
             elements[i]['text'] = wrapped_text
             elements[i]['align'] = align
             n_lines = wrapped_text.count("\n")+1
-            print(text, n_lines)
-            new_y = y + n_lines*font_sizes[prominence-1] * font_factor + (n_lines-1)*line_spacing[prominence-1] + 0.5 * font_sizes[prominence-1] * font_factor
+            # print(text, n_lines)
+            new_y = y + n_lines*ascent + (n_lines-1)*line_spacing[prominence-1]
             elements[i]['y_height'] = new_y - y
-            y = y + xy3-xy1 +  0.5 * font_sizes[prominence-1] * font_factor
+            y = new_y + offset_y
+            # y = y + xy3-xy1 +  0.5 * font_sizes[prominence-1] * font_factor
         for element in elements:
             prominence = element['prominence']
             ft = font.font_variant(size=font_sizes[prominence-1] * font_factor)
