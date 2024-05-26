@@ -14,6 +14,7 @@ with open('config.json', 'r') as f:
 prominence_ranges = [0.75,0.5,0.3,0.2,0.15,0.1]
 font_sizes = [1,0.6,0.35,0.2,0.15]
 line_spacing = [40,20,10,6,4]
+element_padding = [40,20,10,6,4]
 font_factor = 48.0
 
 class Grid(object):
@@ -237,7 +238,7 @@ def draw(width, height, font:ImageFont, grid:Grid, groups):
             ascent, descent = ft.getmetrics()
             (width, baseline), (offset_x, offset_y) = ft.font.getsize("A")
             line_height = ascent + descent
-            # y = y + 0.25 * font_sizes[prominence-1] * font_factor
+            y = y + element_padding[prominence-1]
             wrapper = TextWrapper(text, ft, col_spacing - 2 * half_gutter_spacing)
             wrapped_text = wrapper.wrapped_text()
             alignment_x = elements[i]['alignment_x']
@@ -260,9 +261,9 @@ def draw(width, height, font:ImageFont, grid:Grid, groups):
             elements[i]['align'] = align
             n_lines = wrapped_text.count("\n")+1
             # print(text, n_lines)
-            new_y = y + n_lines*ascent + (n_lines-1)*line_spacing[prominence-1]
+            new_y = y + n_lines*ascent + (n_lines-1)*line_spacing[prominence-1] + offset_y
             elements[i]['y_height'] = new_y - y
-            y = new_y + offset_y
+            y = new_y + element_padding[prominence-1]
             # y = y + xy3-xy1 +  0.5 * font_sizes[prominence-1] * font_factor
         for element in elements:
             prominence = element['prominence']
