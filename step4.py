@@ -199,7 +199,6 @@ def draw(width, height, font:ImageFont, grid:Grid, groups):
     row_spacing = grid.row_spacing
     col_spacing = grid.col_spacing
     #TODO: Add space around logic (NOT NEEDED, DON'T DO)
-    #TODO: Add prominence based margin logic 
     draw.line((0, height/2, width, height/2), fill="red", width=1)
     draw.line((width/2, 0, width/2, height), fill="red", width=1)
     for i in range(0, rows+1):
