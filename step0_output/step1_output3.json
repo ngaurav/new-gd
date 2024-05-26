@@ -13,34 +13,40 @@
             "description": "Mucho Mambo",
             "prominence": "high",
             "asset": "mucho_mambo_logo.png",
-            "style": "Large, vibrant text",
             "type": "asset",
-            "aspect_ratio": "1.33"
+            "aspect_ratio": "1.33",
+            "tag": "title",
+            "placement_x": "center",
+            "placement_y": "slightly below center"
         },
         {
             "name": "Event Timing",
             "description": "Thursday 9PM to 12PM",
             "prominence": "medium",
-            "style": "Clear and prominent text",
-            "type": "text"
+            "type": "text",
+            "tag": "subtitle",
+            "placement_x": "center",
+            "placement_y": "below title"
         },
         {
             "name": "Event Location",
             "description": "Buffalo Wild Wings, Indiranagar",
             "prominence": "medium",
             "asset": "buffalo_wild_wings_logo.png",
-            "style": "Readable text with small logo integration",
             "type": "asset",
-            "aspect_ratio": "2.22"
+            "aspect_ratio": "2.22",
+            "placement_x": "left",
+            "placement_y": "bottom"
         },
         {
             "name": "Event Organizer",
             "description": "Organized by Palladium Dance Company",
             "prominence": "medium",
             "asset": "palladium_dance_company_logo.png",
-            "style": "Subtle text with logo",
             "type": "asset",
-            "aspect_ratio": "3.61"
+            "aspect_ratio": "3.61",
+            "placement_x": "right",
+            "placement_y": "bottom"
         }
     ],
     "urls": [

@@ -1,46 +1,54 @@
 {
     "width": 1080,
-    "height": 1350,
+    "height": 1080,
     "theme": "Salsa Social Event",
     "background": "Pitch black with minimal stars",
     "foreground": "Real photograph of a couple doing salsa",
     "prompt": "Pitch black background with minimal stars and a real photograph of a couple doing salsa in the foreground",
     "color_scheme": "Black background with vibrant green and red for text",
     "font_theme": "Modern and Bold for headers, Sleek and Clear for details",
-    "elements": [
+    "grid": {
+        "cols": 2,
+        "rows": 2
+    },
+    "groups": [
         {
-            "name": "Event Title",
-            "description": "Mucho Mambo",
-            "prominence": "high",
-            "asset": "mucho_mambo_logo.png",
-            "style": "Large, vibrant text",
-            "type": "asset",
-            "aspect_ratio": "1.33"
+            "elements": [
+                {
+                    "name": "Title",
+                    "description": "Fresh Menu",
+                    "prominence": 2,
+                    "type": "text"
+                },
+                {
+                    "name": "Subtitle",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Present sit amet leo erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                    "prominence": 4,
+                    "type": "text"
+                }
+            ]
         },
         {
-            "name": "Event Timing",
-            "description": "Thursday 9PM to 12PM",
-            "prominence": "medium",
-            "style": "Clear and prominent text",
-            "type": "text"
-        },
-        {
-            "name": "Event Location",
-            "description": "Buffalo Wild Wings, Indiranagar",
-            "prominence": "medium",
-            "asset": "buffalo_wild_wings_logo.png",
-            "style": "Readable text with small logo integration",
-            "type": "asset",
-            "aspect_ratio": "2.22"
-        },
-        {
-            "name": "Event Organizer",
-            "description": "Organized by Palladium Dance Company",
-            "prominence": "medium",
-            "asset": "palladium_dance_company_logo.png",
-            "style": "Subtle text with logo",
-            "type": "asset",
-            "aspect_ratio": "3.61"
+            "elements": [
+                {
+                    "name": "CTA",
+                    "description": "ORDER NOW",
+                    "prominence": 3,
+                    "type": "text"
+                },
+                {
+                    "name": "Contact",
+                    "description": "123-456-7890",
+                    "prominence": 4,
+                    "type": "text"
+                },
+                {
+                    "name": "social",
+                    "description": "@reallygreatsite",
+                    "prominence": 4,
+                    "type": "text"
+                }
+            ]
         }
     ],
     "urls": [

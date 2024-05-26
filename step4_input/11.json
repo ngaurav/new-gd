@@ -1,47 +1,31 @@
 {
     "width": 1080,
-    "height": 1350,
+    "height": 1080,
     "theme": "Salsa Social Event",
     "background": "Pitch black with minimal stars",
     "foreground": "Real photograph of a couple doing salsa",
     "prompt": "Pitch black background with minimal stars and a real photograph of a couple doing salsa in the foreground",
     "color_scheme": "Black background with vibrant green and red for text",
     "font_theme": "Modern and Bold for headers, Sleek and Clear for details",
-    "elements": [
+    "grid": {
+        "cols": 2,
+        "rows": 1
+    },
+    "groups": [
         {
-            "name": "Event Title",
-            "description": "Mucho Mambo",
-            "prominence": "high",
-            "asset": "mucho_mambo_logo.png",
-            "style": "Large, vibrant text",
-            "type": "asset",
-            "aspect_ratio": "1.33"
-        },
-        {
-            "name": "Event Timing",
-            "description": "Thursday 9PM to 12PM",
-            "prominence": "medium",
-            "style": "Clear and prominent text",
-            "type": "text"
-        },
-        {
-            "name": "Event Location",
-            "description": "Buffalo Wild Wings, Indiranagar",
-            "prominence": "medium",
-            "asset": "buffalo_wild_wings_logo.png",
-            "style": "Readable text with small logo integration",
-            "type": "asset",
-            "aspect_ratio": "2.22"
-        },
-        {
-            "name": "Event Organizer",
-            "description": "Organized by Palladium Dance Company",
-            "prominence": "medium",
-            "asset": "palladium_dance_company_logo.png",
-            "style": "Subtle text with logo",
-            "type": "asset",
-            "aspect_ratio": "3.61"
+            "col": 0,
+            "row": 0,
+            "elements": [
+                {
+                    "name": "Title",
+                    "description": "You Have a Good Day",
+                    "prominence": 1,
+                    "type": "text"
+                }
+
+            ]
         }
+
     ],
     "urls": [
         "https://cdn.discordapp.com/attachments/1224586563510468619/1233792630354350080/gd_superagi_98661_Create_a_poster_Pitch_black_background_with_m_97f603e6-e984-456a-9b34-bc72aa56ce08.png?ex=662e626d&is=662d10ed&hm=f3961d26b12209439dd6a4bfa948eeb56b5b93babc572f19a9215d1beb3b50ba&",

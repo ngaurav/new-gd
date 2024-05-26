@@ -1,29 +1,21 @@
 from pydantic import BaseModel, Field
 from typing import List
 
-class Image(BaseModel):
-    x: int
-    y: int
-    width: int
-    height: int
-    prompt: str
 
 class Asset(BaseModel):
-    x: int
-    y: int
+    left: int = Field(..., description="x co-ordinate of the asset in pixels")
+    top: int = Field(..., description="y co-ordinate of the asset in pixels")
     width: int
     height: int
     asset_uri: str
 
-class TextBox(BaseModel):
-    x: int
-    y: int
+class Text(BaseModel):
+    center_x: int = Field(..., description="x co-ordinate of the center of the text in pixels")
+    center_y: int = Field(..., description="y co-ordinate of the center of the text in pixels")
     font_size: int
-    font_style: str
+    font_family: str
     content: str
 
 class Poster(BaseModel):
-    background: Image
     assets: List[Asset]
-    images: List[Image]
-    texts: List[TextBox]
+    texts: List[Text]

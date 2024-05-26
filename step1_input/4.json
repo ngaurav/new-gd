@@ -1,6 +1,6 @@
 {
     "width": 1080,
-    "height": 1350,
+    "height": 1080,
     "theme": "Salsa Social Event",
     "background": "Pitch black with minimal stars",
     "foreground": "Real photograph of a couple doing salsa",
@@ -9,38 +9,40 @@
     "font_theme": "Modern and Bold for headers, Sleek and Clear for details",
     "elements": [
         {
-            "name": "Event Title",
-            "description": "Mucho Mambo",
-            "prominence": "high",
-            "asset": "mucho_mambo_logo.png",
-            "style": "Large, vibrant text",
-            "type": "asset",
-            "aspect_ratio": "1.33"
-        },
-        {
-            "name": "Event Timing",
-            "description": "Thursday 9PM to 12PM",
-            "prominence": "medium",
-            "style": "Clear and prominent text",
+            "name": "Title",
+            "description": "Fresh Smoothie",
+            "prominence": 1,
             "type": "text"
         },
         {
-            "name": "Event Location",
-            "description": "Buffalo Wild Wings, Indiranagar",
-            "prominence": "medium",
-            "asset": "buffalo_wild_wings_logo.png",
-            "style": "Readable text with small logo integration",
-            "type": "asset",
-            "aspect_ratio": "2.22"
+            "name": "Description",
+            "description": "Revitalize your day, one sip at a time: Discover the goodness of our fresh smoothie promotion!",
+            "prominence": 4,
+            "type": "text"
         },
         {
-            "name": "Event Organizer",
-            "description": "Organized by Palladium Dance Company",
-            "prominence": "medium",
-            "asset": "palladium_dance_company_logo.png",
-            "style": "Subtle text with logo",
-            "type": "asset",
-            "aspect_ratio": "3.61"
+            "name": "Contact",
+            "description": "123-456-7890",
+            "prominence": 4,
+            "type": "text"
+        },
+        {
+            "name": "website",
+            "description": "www.reallygreatsite.com",
+            "prominence": 4,
+            "type": "text"
+        },
+        {
+            "name": "address",
+            "description": "123 Anywhere St., Any City",
+            "prominence": 4,
+            "type": "text"
+        },
+        {
+            "name": "CTA",
+            "description": "ORDER NOW",
+            "prominence": 3,
+            "type": "text"
         }
     ],
     "urls": [

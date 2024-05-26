@@ -13,14 +13,19 @@ A poster outline has the following important info:
 
 Additionally, the poster outline will also contain a list of elements.
 Each of the elements will have a name and a description.
-The name of the element will suggest the purpose: like title, subtitle, venue, date, time, CTA, foreground image, background image, logo, etc.
+Every element will also have a prominence level.
+If the element is of highest importance then it should be of `high` prominence.
+Most elements will have a `medium` prominence, and if there are more than five elements then some lesser important elements will have `low` prominence.
 The elements are usually of two types: Image and Text.
 For the Text elements, the description of the element will contain the exact content of the text.
 For the Image elements, the description of the element will contain the detailed textual description of the visuals in the image.
 Some elements can have an asset (file) associated with it. The user will provide a list of assets which can be attached to an element.
 The user can also provide specific design instructions for individual elements. You need to capture this as the style of the element.
 
-DO NOT ADD ANY ELEMENT WHICH USER HAS NOT MENTIONED.
+HERE ARE YOUR CONSTRAINTS:
+1. ONLY PROVIDE ELEMENTS WHICH ARE EXPLICITLY MENTIONED BY THE USER. DO NOT ADD ANY ELEMENT WHICH USER HAS NOT MENTIONED.
+2. DO NOT MERGE MULTIPLE ELEMENTS INTO ONE ELEMENT. CREATE SEPARATE ELEMENTS.
+2. TRY NOT TO CREATE SEPARATE ELEMENTS JUST FOR AN ASSET. FIND THE RIGHT TEXT ELEMENT TO WHICH THE ASSET CAN BE ATTACHED.
 
 Respond with only valid JSON conforming to the following schema:
 """+json.dumps(Outline.model_json_schema(), indent=2)
@@ -29,7 +34,7 @@ step1_user_prompt_1 = """
 Design a poster for a Salsa Social Event for Instagram. The event is titled Mucho Mambo.
 It is happening on Thursday 9PM to 12 PM At Buffalo Wild Wings, Indiranagar.
 The event is organised by Palladium Dance Company.
-Please use a Golden starry theme for the background and in the foreground use a real photograph of a couple doing salsa.
+Please use a pitch black background with minimal stars and in the foreground use a real photograph of a couple doing salsa.
 
 You can use the assets:
 mucho_mambo_logo.png

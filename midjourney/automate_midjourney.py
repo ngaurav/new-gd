@@ -14,6 +14,8 @@ from playwright.async_api import async_playwright, Page
 from playwright.sync_api import sync_playwright
 
 num_iterations = 1
+# TODO: Sometimes a banner appears and you need to click on the cross.
+# TODO: Sometimes you get an error because Midjourney API is down.
 
 # Get logger for this file
 logger = logging.getLogger(__name__)
