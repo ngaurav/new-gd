@@ -123,6 +123,7 @@ def update_font_factor(font, text, priority, canvas_width, canvas_height):
 
 def add_alignment(grid:Grid, groups):
     #TODO: Add 2 col, 1 row 
+    #TODO: Add Long Posters (Insta Story), 4 corners and then large center block.
     if grid.rows == 1 and grid.cols == 1:
         for group in groups:
             col = group['col']
@@ -188,7 +189,7 @@ def add_alignment(grid:Grid, groups):
     return groups
 
 
-def draw(width, height, font, grid:Grid, groups):
+def draw(width, height, font:ImageFont, grid:Grid, groups):
     rows = grid.rows
     cols = grid.cols
     half_gutter_spacing = grid.gutter_margin/2
@@ -196,7 +197,7 @@ def draw(width, height, font, grid:Grid, groups):
     draw = ImageDraw.Draw(image)
     row_spacing = grid.row_spacing
     col_spacing = grid.col_spacing
-    #TODO: Add space around logic 
+    #TODO: Add space around logic (NOT NEEDED, DON'T DO)
     #TODO: Add prominence based margin logic 
     draw.line((0, height/2, width, height/2), fill="red", width=1)
     draw.line((width/2, 0, width/2, height), fill="red", width=1)
@@ -231,9 +232,10 @@ def draw(width, height, font, grid:Grid, groups):
         y = y_start
         for i in range(len(elements)):
             prominence = elements[i]['prominence']
-            # y = y + line_spacing[prominence-1]
             text = elements[i]['description']
             ft = font.font_variant(size=font_sizes[prominence-1] * font_factor)
+            _,_,_,line_height =ft.getbbox('A')
+            # y = y + line_height * 0.25
             wrapper = TextWrapper(text, ft, col_spacing - 2 * half_gutter_spacing)
             wrapped_text = wrapper.wrapped_text()
             alignment_x = elements[i]['alignment_x']
@@ -254,7 +256,11 @@ def draw(width, height, font, grid:Grid, groups):
             elements[i]['y'] = y
             elements[i]['text'] = wrapped_text
             elements[i]['align'] = align
-            y = y + (xy3-xy1) + 2 * line_spacing[prominence-1]
+            n_lines = wrapped_text.count("\n")+1
+            print(text, n_lines)
+            new_y = y + n_lines*font_sizes[prominence-1] * font_factor + (n_lines-1)*line_spacing[prominence-1] + 0.5 * font_sizes[prominence-1] * font_factor
+            elements[i]['y_height'] = new_y - y
+            y = new_y
         for element in elements:
             prominence = element['prominence']
             ft = font.font_variant(size=font_sizes[prominence-1] * font_factor)
@@ -272,6 +278,14 @@ def draw(width, height, font, grid:Grid, groups):
                 fill="black",
                 align=element['align'],
                 font=ft)
+            xy0, xy1, xy2, xy3 = draw.multiline_textbbox(
+                (element['x'], element['y']+y_delta),
+                element['text'],
+                spacing=line_spacing[prominence-1],
+                align=element['align'],
+                font=ft)
+            draw.rectangle((xy0, element['y']+y_delta, xy2, element['y']+y_delta+element['y_height']), outline='green')
+
     return image
 
 if __name__ == "__main__":
