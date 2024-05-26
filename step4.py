@@ -123,7 +123,6 @@ def update_font_factor(font, text, priority, canvas_width, canvas_height):
             return font_size
 
 def add_alignment(grid:Grid, groups):
-    #TODO: Add 2 col, 1 row 
     #TODO: Add Long Posters (Insta Story), 4 corners and then large center block.
     if grid.rows == 1 and grid.cols == 1:
         for group in groups:
@@ -132,6 +131,17 @@ def add_alignment(grid:Grid, groups):
             for element in group['elements']:
                 if col == 0 and row == 0:
                     element['alignment_x'] = 0
+                    element['alignment_y'] = 0
+    elif grid.rows == 1 and grid.cols == 2:
+        for group in groups:
+            col = group['col']
+            row = group['row']
+            for element in group['elements']:
+                if col == 0 and row == 0:
+                    element['alignment_x'] = 1
+                    element['alignment_y'] = 0
+                elif col == 1 and row == 0:
+                    element['alignment_x'] = -1
                     element['alignment_y'] = 0
     elif grid.rows == 2 and grid.cols == 2:
         for group in groups:
