@@ -7,49 +7,13 @@
     "prompt": "Pitch black background with minimal stars and a real photograph of a couple doing salsa in the foreground",
     "color_scheme": "Black background with vibrant green and red for text",
     "font_theme": "Modern and Bold for headers, Sleek and Clear for details",
-    "grid": {
-        "cols": 2,
-        "rows": 2
-    },
     "groups": [
         {
-            "col": 1,
-            "row": 0,
             "elements": [
                 {
-                    "name": "Title",
-                    "description": "Fresh Menu",
-                    "prominence": 2,
-                    "type": "text"
-                },
-                {
-                    "name": "Subtitle",
-                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Present sit amet leo erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-                    "prominence": 4,
-                    "type": "text"
-                }
-            ]
-        },
-        {
-            "col": 1,
-            "row": 1,
-            "elements": [
-                {
-                    "name": "CTA",
-                    "description": "ORDER NOW",
+                    "name": "Message",
+                    "description": "YOU CAN",
                     "prominence": 3,
-                    "type": "text"
-                },
-                {
-                    "name": "Contact",
-                    "description": "123-456-7890",
-                    "prominence": 4,
-                    "type": "text"
-                },
-                {
-                    "name": "social",
-                    "description": "@reallygreatsite",
-                    "prominence": 4,
                     "type": "text"
                 }
             ]

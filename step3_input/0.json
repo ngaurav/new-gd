@@ -13,41 +13,25 @@
     },
     "groups": [
         {
-            "col": 1,
-            "row": 0,
             "elements": [
                 {
                     "name": "Title",
-                    "description": "Fresh Menu",
+                    "description": "Happy Monday",
                     "prominence": 2,
                     "type": "text"
                 },
                 {
                     "name": "Subtitle",
-                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Present sit amet leo erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-                    "prominence": 4,
+                    "description": "Have a Nice Day!!",
+                    "prominence": 3,
                     "type": "text"
                 }
             ]
         },
         {
-            "col": 1,
-            "row": 1,
             "elements": [
                 {
-                    "name": "CTA",
-                    "description": "ORDER NOW",
-                    "prominence": 3,
-                    "type": "text"
-                },
-                {
-                    "name": "Contact",
-                    "description": "123-456-7890",
-                    "prominence": 4,
-                    "type": "text"
-                },
-                {
-                    "name": "social",
+                    "name": "Social Handle",
                     "description": "@reallygreatsite",
                     "prominence": 4,
                     "type": "text"

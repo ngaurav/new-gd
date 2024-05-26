@@ -13,8 +13,6 @@
     },
     "groups": [
         {
-            "col": 1,
-            "row": 0,
             "elements": [
                 {
                     "name": "Title",
@@ -31,8 +29,6 @@
             ]
         },
         {
-            "col": 1,
-            "row": 1,
             "elements": [
                 {
                     "name": "CTA",

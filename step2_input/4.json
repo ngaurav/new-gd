@@ -7,39 +7,25 @@
     "prompt": "Pitch black background with minimal stars and a real photograph of a couple doing salsa in the foreground",
     "color_scheme": "Black background with vibrant green and red for text",
     "font_theme": "Modern and Bold for headers, Sleek and Clear for details",
-    "grid": {
-        "cols": 2,
-        "rows": 2
-    },
     "groups": [
         {
-            "col": 1,
-            "row": 0,
             "elements": [
                 {
                     "name": "Title",
-                    "description": "Fresh Menu",
-                    "prominence": 2,
+                    "description": "Fresh Smoothie",
+                    "prominence": 1,
                     "type": "text"
                 },
                 {
-                    "name": "Subtitle",
-                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Present sit amet leo erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                    "name": "Description",
+                    "description": "Revitalize your day, one sip at a time: Discover the goodness of our fresh smoothie promotion!",
                     "prominence": 4,
                     "type": "text"
                 }
             ]
         },
         {
-            "col": 1,
-            "row": 1,
             "elements": [
-                {
-                    "name": "CTA",
-                    "description": "ORDER NOW",
-                    "prominence": 3,
-                    "type": "text"
-                },
                 {
                     "name": "Contact",
                     "description": "123-456-7890",
@@ -47,9 +33,21 @@
                     "type": "text"
                 },
                 {
-                    "name": "social",
-                    "description": "@reallygreatsite",
+                    "name": "website",
+                    "description": "www.reallygreatsite.com",
                     "prominence": 4,
+                    "type": "text"
+                },
+                {
+                    "name": "address",
+                    "description": "123 Anywhere St., Any City",
+                    "prominence": 4,
+                    "type": "text"
+                },
+                {
+                    "name": "CTA",
+                    "description": "ORDER NOW",
+                    "prominence": 3,
                     "type": "text"
                 }
             ]
