@@ -222,8 +222,8 @@ def draw(width, height, font:ImageFont, grid:Grid, groups):
     groups = add_alignment(grid, groups)
     # TODO: Sort groups to put similar priority together in y-axis
     # TODO: Heirarchy (Rule of odds)
-    # TODO: Hanging indent for bullets, quotes, etc.
-    # TODO: Hanging indent for images.
+    # TODO: Hanging indent for bullets, quotes, etc. (LAST MILE PROBLEM)
+    # TODO: Hanging indent for images. (LAST MILE PROBLEM)
     for group in groups:
         elements = group['elements']
         col = group['col']
