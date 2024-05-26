@@ -131,6 +131,17 @@ def add_alignment(grid:Grid, groups):
                 if col == 0 and row == 0:
                     element['alignment_x'] = 0
                     element['alignment_y'] = 0
+    elif grid.rows == 1 and grid.cols == 2:  # Added this loop for "2 col, 1 row"
+        for group in groups:
+            col = group['col']
+            row = group['row']
+            for element in group['elements']:
+                if col == 0 and row == 0:
+                    element['alignment_x'] = 1
+                    element['alignment_y'] = 0
+                elif col == 1 and row == 0:
+                    element['alignment_x'] = -1
+                    element['alignment_y'] = 0
     elif grid.rows == 2 and grid.cols == 2:
         for group in groups:
             col = group['col']
