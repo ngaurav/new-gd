@@ -309,7 +309,6 @@ if __name__ == "__main__":
     font = ImageFont.truetype(font_path, size=1)
     mypath = config['STEP4_INPUT_FOLDER']
     onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-    i = 0
     for file in onlyfiles:
         with open(join(config['STEP4_INPUT_FOLDER'],file), 'r') as f:
             step4_input = json.load(f)
@@ -326,4 +325,3 @@ if __name__ == "__main__":
             grid=grid,
             groups=step4_input['groups'])
         img.save(join(config['STEP4_OUTPUT_FOLDER'],f"{file}.png"))
-        i = i + 1

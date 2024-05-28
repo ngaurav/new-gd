@@ -1,45 +1,54 @@
-import json, os
+from utils import askgpt, getjson
+from step0_prompts import step0_system_prompt
+import json, os, shutil
+from os import listdir
+from os.path import isfile, join
+from PIL import Image
+from midjourney.automate_midjourney import call_midjourney
 
 with open('config.json', 'r') as f:
     config = json.load(f)
 
-if __name__ == "__main__":
-    with open(config['STEP1_OUTPUT_FILE'], 'r') as f:
-        step1_response = json.load(f)
+def step0_post_process(outline: str):
+    for el in out['elements']:
+        if 'asset' in el.keys() and el['asset']:
+            img = Image.open(config['INPUT_FOLDER']+'/'+el['asset'])
+            el['type'] = "asset"
+            el['aspect_ratio'] = str(round(img.width/img.height, 2))
+        else:
+            el['type'] = 'text'
     output_folder = os.path.join(config['STEP0_OUTPUT_FOLDER'])
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
-    title_placement_x = ['center', 'center', 'center', 'center']
-    title_placement_y = ['top', 'slightly above center', 'center', 'slightly below center']
-    subtitle_placement_x = ['center', 'center', 'center', 'center']
-    subtitle_placement_y = ['below title', 'below title', 'below title', 'below title']
-    other_placement_x = ['left', 'right', 'left', 'right']
-    other_placement_y = ['bottom', 'bottom', 'top', 'top']
-    for i in range(4):
-        output_file = os.path.join(config['STEP0_OUTPUT_FOLDER'],f"{config['STEP0_OUTPUT_PREFIX']}{i}.json")
-        count = 0
-        for element in step1_response['elements']:
-            if element['prominence'] == 'high':
-                count += 1
-                element['tag'] = 'title'
-                element['placement_x'] = title_placement_x[i]
-                element['placement_y'] = title_placement_y[i]
-        if count <=1:
-            for element in step1_response['elements']:
-                if element['prominence'] == 'medium' and element['type'] == 'text':
-                    element['tag'] = 'subtitle'
-                    element['placement_x'] = subtitle_placement_x[i]
-                    element['placement_y'] = subtitle_placement_y[i]
-        j = 0
-        for element in step1_response['elements']:
-            if not 'placement_x' in element:
-                element['placement_x'] = other_placement_x[j]
-                element['placement_y'] = other_placement_y[j]
-                j = j + 1
-            if 'placement' in element:
-                del element['placement']
-            if 'style' in element:
-                del element['style']
-        with open(output_file, 'w') as f:
-            json.dump(step1_response, f, indent=4)
-    
+    # prompt = "Create a poster: " + out['prompt']
+    # call_midjourney(prompt, out['width'], out['height'])
+    # with open(config['MIDJOURNEY_OUTPUT_FILE']) as file:
+    #     lines = [line.rstrip() for line in file]
+    #     out['urls'] = lines
+    # for j, image_file in enumerate(os.listdir(config['MIDJOURNEY_OUTPUT_FOLDER'])):
+    #     if image_file.endswith(".png"):
+    #         src_file_path = os.path.join(config['MIDJOURNEY_OUTPUT_FOLDER'], image_file)
+    #         dest_file_path = os.path.join(output_folder, f"{j}.png")
+    #         shutil.copyfile(src_file_path, dest_file_path)
+    return out
+
+if __name__ == "__main__":
+    output_folder = os.path.join(config['STEP1_INPUT_FOLDER'])
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+    mypath = config['STEP0_INPUT_FOLDER']
+    onlyfiles = [f for f in listdir(mypath) if (f.endswith('.txt') and isfile(join(mypath, f)))]
+    for file in onlyfiles:
+        with open(join(mypath, file), 'r') as f:
+            step0_input = f.read()
+        retry = 0
+        while retry < 3:
+            llm_output = askgpt(step0_input, system=step0_system_prompt)
+            out = getjson(llm_output)
+            if out == False:
+                retry = retry + 1
+            else:
+                retry = 3
+        step0_response = step0_post_process(out)
+        with open(join(output_folder, file + ".json"), 'w') as f:
+            json.dump(step0_response, f, indent=4)
