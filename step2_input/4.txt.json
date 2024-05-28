@@ -1,0 +1,41 @@
+{
+    "elements": [
+        {
+            "name": "Title",
+            "description": "Savor the Freshness!",
+            "prominence": "high",
+            "group": 1
+        },
+        {
+            "name": "Tagline",
+            "description": "Delicious smoothies from the freshest fruits.",
+            "prominence": "high",
+            "group": 1
+        },
+        {
+            "name": "CTA - Order Now",
+            "description": "Order Now!",
+            "prominence": "high",
+            "instructions": "Make this a button or a prominent link",
+            "group": 1
+        },
+        {
+            "name": "Phone Number",
+            "description": "Contact us at 123-456-7890",
+            "prominence": "medium",
+            "group": 2
+        },
+        {
+            "name": "Website",
+            "description": "Visit us at areallygreatsite.com",
+            "prominence": "medium",
+            "group": 2
+        },
+        {
+            "name": "Address",
+            "description": "Come see us at 123 Anywhere St., Any City",
+            "prominence": "medium",
+            "group": 2
+        }
+    ]
+}
