@@ -10,6 +10,10 @@
     "STEP2_OUTPUT_FOLDER" : "step2_output",
     "STEP3_OUTPUT_FILE" : "step3_output.png",
     "STEP3_OUTPUT_FOLDER" : "step3_output",
+    "STEP0_INPUT_FOLDER" : "step0_input",
+    "STEP1_INPUT_FOLDER" : "step1_input",
+    "STEP2_INPUT_FOLDER" : "step2_input",
+    "STEP3_INPUT_FOLDER" : "step3_input",
     "STEP4_INPUT_FOLDER" : "step4_input",
     "STEP4_OUTPUT_FOLDER" : "step4_output"
 }

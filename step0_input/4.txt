@@ -1,0 +1,6 @@
+Design a social media ad for Smoothie brand. Come up with a title and a one-line description which can highlight the fresh aspect of our smoothies.
+Include the contact details:
+Phone number (123-456-7890)
+Webstie (areallygreatsite.com)
+Address (123 Anywhere St., Any City)
+Also add a CTA for Order Now.
