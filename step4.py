@@ -1,6 +1,5 @@
 import shutil
 from utils import askgpt, getjson
-from step2_prompts import step2_system_prompt
 import json, os
 import subprocess
 from PIL import Image, ImageDraw, ImageFont

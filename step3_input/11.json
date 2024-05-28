@@ -7,17 +7,28 @@
     "prompt": "Pitch black background with minimal stars and a real photograph of a couple doing salsa in the foreground",
     "color_scheme": "Black background with vibrant green and red for text",
     "font_theme": "Modern and Bold for headers, Sleek and Clear for details",
+    "grid": {
+        "cols": 2,
+        "rows": 1
+    },
     "groups": [
         {
             "elements": [
                 {
-                    "name": "Message",
-                    "description": "YOU CAN",
-                    "prominence": 3,
+                    "name": "Primary Message",
+                    "description": "Bloom where you are planted.",
+                    "prominence": 1,
+                    "type": "text"
+                },
+                {
+                    "name": "Secondary Message",
+                    "description": "Daily Motivation",
+                    "prominence": 1,
                     "type": "text"
                 }
             ]
         }
+
     ],
     "urls": [
         "https://cdn.discordapp.com/attachments/1224586563510468619/1233792630354350080/gd_superagi_98661_Create_a_poster_Pitch_black_background_with_m_97f603e6-e984-456a-9b34-bc72aa56ce08.png?ex=662e626d&is=662d10ed&hm=f3961d26b12209439dd6a4bfa948eeb56b5b93babc572f19a9215d1beb3b50ba&",
