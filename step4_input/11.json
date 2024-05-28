@@ -17,12 +17,17 @@
             "row": 0,
             "elements": [
                 {
-                    "name": "Title",
-                    "description": "You Have a Good Day",
+                    "name": "Primary Message",
+                    "description": "Bloom where you are planted.",
+                    "prominence": 1,
+                    "type": "text"
+                },
+                {
+                    "name": "Secondary Message",
+                    "description": "Daily Motivation",
                     "prominence": 1,
                     "type": "text"
                 }
-
             ]
         }
 

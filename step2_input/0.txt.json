@@ -1,0 +1,22 @@
+{
+    "elements": [
+        {
+            "name": "Main Message",
+            "description": "Happy Monday",
+            "prominence": "high",
+            "group": 1
+        },
+        {
+            "name": "Secondary Greeting",
+            "description": "May your week be as bright as this day!",
+            "prominence": "medium",
+            "group": 2
+        },
+        {
+            "name": "Social Media Handle",
+            "description": "@nishantg",
+            "prominence": "medium",
+            "group": 3
+        }
+    ]
+}

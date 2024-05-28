@@ -1,0 +1,44 @@
+{
+    "elements": [
+        {
+            "name": "Title",
+            "description": "Fresh Menu",
+            "prominence": "high",
+            "group": 1,
+            "asset": null,
+            "instructions": "Place at the top with large, bold font."
+        },
+        {
+            "name": "Subtitle",
+            "description": "Delicious is always in season!",
+            "prominence": "high",
+            "group": 1,
+            "asset": null,
+            "instructions": "Below the title, slightly smaller but clearly readable."
+        },
+        {
+            "name": "CTA Button",
+            "description": "Order Now",
+            "prominence": "high",
+            "group": 1,
+            "asset": null,
+            "instructions": "Visually appealing button placed near the bottom center"
+        },
+        {
+            "name": "Phone Number",
+            "description": "123-456-7890",
+            "prominence": "medium",
+            "group": 2,
+            "asset": null,
+            "instructions": "Placed discreetly at the bottom, readable but not prominent."
+        },
+        {
+            "name": "Instagram Handle",
+            "description": "@reallygreatsite",
+            "prominence": "medium",
+            "group": 2,
+            "asset": null,
+            "instructions": "Include social media icon, position near the phone number."
+        }
+    ]
+}

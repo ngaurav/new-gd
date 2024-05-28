@@ -1,0 +1,17 @@
+{
+    "elements": [
+        {
+            "name": "Heading",
+            "description": "Daily motivation",
+            "prominence": "medium",
+            "group": 1
+        },
+        {
+            "name": "Main Quote",
+            "description": "Bloom where you are planted.",
+            "prominence": "high",
+            "instructions": "This text should be central and more prominent than the heading.",
+            "group": 1
+        }
+    ]
+}

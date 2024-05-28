@@ -1,0 +1,48 @@
+{
+    "width": 1080,
+    "height": 1080,
+    "theme": "Fresh and Vibrant",
+    "background": "A colorful array of fresh fruits blending into a smoothie.",
+    "prompt": "A colorful array of fresh fruits blending into a smoothie to highlight the freshness and variety of the brand's offerings.",
+    "color_scheme": "Vibrant fruits colors such as shades of red, green, yellow, and orange",
+    "font_theme": "Modern and bold to attract social media users",
+    "elements": [
+        {
+            "name": "Title",
+            "description": "Savor the Freshness!",
+            "prominence": "high",
+            "type": "text"
+        },
+        {
+            "name": "Tagline",
+            "description": "Delicious smoothies from the freshest fruits.",
+            "prominence": "high",
+            "type": "text"
+        },
+        {
+            "name": "Phone Number",
+            "description": "Contact us at 123-456-7890",
+            "prominence": "medium",
+            "type": "text"
+        },
+        {
+            "name": "Website",
+            "description": "Visit us at areallygreatsite.com",
+            "prominence": "medium",
+            "type": "text"
+        },
+        {
+            "name": "Address",
+            "description": "Come see us at 123 Anywhere St., Any City",
+            "prominence": "medium",
+            "type": "text"
+        },
+        {
+            "name": "CTA - Order Now",
+            "description": "Order Now!",
+            "prominence": "high",
+            "instructions": "Make this a button or a prominent link",
+            "type": "text"
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "width": 1920,
+    "height": 1080,
+    "theme": "Peaceful morning",
+    "background": "Image of a serene sunrise with gentle hues of orange and pink spreading across the sky.",
+    "foreground": "Text saying 'Happy Monday' positioned over the sunrise",
+    "prompt": "Peaceful sunrise with text overlay conveying a morning greeting",
+    "color_scheme": "Soft shades of orange, pink, and light blue",
+    "font_theme": "Modern, clean font for a fresh, inviting look",
+    "elements": [
+        {
+            "name": "Main Message",
+            "description": "Happy Monday",
+            "prominence": "high",
+            "asset": null,
+            "instructions": "Place this text prominently over the image of the sunrise",
+            "type": "text"
+        },
+        {
+            "name": "Secondary Greeting",
+            "description": "May your week be as bright as this day!",
+            "prominence": "medium",
+            "asset": null,
+            "instructions": "Position this text slightly smaller below the main message",
+            "type": "text"
+        },
+        {
+            "name": "Social Media Handle",
+            "description": "@nishantg",
+            "prominence": "medium",
+            "asset": null,
+            "instructions": "Add this in the bottom right corner in smaller font size",
+            "type": "text"
+        }
+    ]
+}

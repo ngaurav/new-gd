@@ -1,0 +1,10 @@
+{
+    "elements": [
+        {
+            "name": "Main text",
+            "description": "You Can",
+            "prominence": "high",
+            "group": 1
+        }
+    ]
+}

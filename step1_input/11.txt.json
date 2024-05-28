@@ -1,0 +1,27 @@
+{
+    "width": 800,
+    "height": 1200,
+    "theme": "Motivation",
+    "background": "An image of a vibrant, blooming flower in a serene garden.",
+    "prompt": "An image of a vibrant, blooming flower with the text 'Daily motivation' and 'Bloom where you are planted' overlaid on top.",
+    "color_scheme": "Earthy tones with splashes of vibrant flower colors",
+    "font_theme": "Modern and Inspirational",
+    "elements": [
+        {
+            "name": "Heading",
+            "description": "Daily motivation",
+            "prominence": "medium",
+            "asset": null,
+            "instructions": null,
+            "type": "text"
+        },
+        {
+            "name": "Main Quote",
+            "description": "Bloom where you are planted.",
+            "prominence": "high",
+            "asset": null,
+            "instructions": "This text should be central and more prominent than the heading.",
+            "type": "text"
+        }
+    ]
+}

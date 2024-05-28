@@ -21,4 +21,8 @@ def askgptvision(user: str, img_url: str, system: str = None, model: str = 'gpt-
 def getjson(outline: str):
     if outline.startswith("```json"):
         outline = outline[8:-4]
-    return json.loads(outline)
+    try:
+        return json.loads(outline)
+    except:
+        print(outline)
+        return False
