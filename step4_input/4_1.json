@@ -1,0 +1,66 @@
+{
+    "width": 1080,
+    "height": 1080,
+    "theme": "Fresh and Vibrant",
+    "background": "A colorful array of fresh fruits blending into a smoothie.",
+    "prompt": "A colorful array of fresh fruits blending into a smoothie to highlight the freshness and variety of the brand's offerings.",
+    "color_scheme": "Vibrant fruits colors such as shades of red, green, yellow, and orange",
+    "font_theme": "Modern and bold to attract social media users",
+    "grid": [
+        {
+            "cols": 2,
+            "rows": 2
+        }
+    ],
+    "groups": [
+        {
+            "elements": [
+                {
+                    "name": "Title",
+                    "description": "Savor the Freshness!",
+                    "prominence": "high",
+                    "group": 1
+                },
+                {
+                    "name": "Tagline",
+                    "description": "Delicious smoothies from the freshest fruits.",
+                    "prominence": "high",
+                    "group": 1
+                },
+                {
+                    "name": "CTA - Order Now",
+                    "description": "Order Now!",
+                    "prominence": "high",
+                    "instructions": "Make this a button or a prominent link",
+                    "group": 1
+                }
+            ],
+            "col": 1,
+            "row": 0
+        },
+        {
+            "elements": [
+                {
+                    "name": "Phone Number",
+                    "description": "Contact us at 123-456-7890",
+                    "prominence": "medium",
+                    "group": 2
+                },
+                {
+                    "name": "Website",
+                    "description": "Visit us at areallygreatsite.com",
+                    "prominence": "medium",
+                    "group": 2
+                },
+                {
+                    "name": "Address",
+                    "description": "Come see us at 123 Anywhere St., Any City",
+                    "prominence": "medium",
+                    "group": 2
+                }
+            ],
+            "col": 1,
+            "row": 1
+        }
+    ]
+}

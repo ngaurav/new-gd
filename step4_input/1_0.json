@@ -1,0 +1,29 @@
+{
+    "width": 800,
+    "height": 1200,
+    "theme": "Motivational",
+    "background": "Abstract shapes and gradients in pastel colors",
+    "prompt": "Abstract shapes and gradients in pastel colors, focused around the text 'You Can'",
+    "color_scheme": "Pastel colors dominated by soft blues, pinks, and yellows",
+    "font_theme": "Bold, Modern",
+    "grid": [
+        {
+            "cols": 2,
+            "rows": 1
+        }
+    ],
+    "groups": [
+        {
+            "elements": [
+                {
+                    "name": "Main text",
+                    "description": "You Can",
+                    "prominence": "high",
+                    "group": 1
+                }
+            ],
+            "col": 0,
+            "row": 0
+        }
+    ]
+}
